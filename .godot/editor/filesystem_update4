@@ -1,3 +1,11 @@
 res://Scenes/battle_scene.tscn
 res://Scenes/battle_scene.gd
 res://Scenes/introduction.tscn
+res://enemy.gd
+res://Scenes/EnemyNode.gd
+res://attack_inventory/attacks/enemy_attack/Slash.tres
+res://Scenes/main_menu.tscn
+res://Scenes/main_menu.gd
+res://Scenes/introduction.gd
+res://Scenes/EnemyNode.tscn
+res://enemy/bandit.tres

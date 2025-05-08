@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://gx6fkd0atvu6"]
+[gd_scene load_steps=12 format=3 uid="uid://gx6fkd0atvu6"]
 
 [ext_resource type="Texture2D" uid="uid://c5sf54elkx0gs" path="res://Sprites/bg/back.png" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://cq5oug4jygvp5" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
 [ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="3_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://c3ycmhya8yl2k" path="res://Sound_Eff/button_press.wav" id="5_n45e2"]
+[ext_resource type="AudioStream" uid="uid://cqvow86n5f7jl" path="res://Music/main_menu.ogg" id="6_opfnp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 texture = ExtResource("1_1ehe0")
@@ -141,6 +143,14 @@ theme_override_font_sizes/font_size = 80
 text = "Parasitic Ambition"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_n45e2")
+
+[node name="main_menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_opfnp")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/tutorial_button" to="." method="_on_tutorial_pressed"]

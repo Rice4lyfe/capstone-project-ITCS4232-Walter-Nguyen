@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=6 format=3 uid="uid://c4pwc57q4g7am"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_giym0"]
+[ext_resource type="Resource" uid="uid://bl25j60wlcwg0" path="res://attack_inventory/attacks/enemy_attack/Focus.tres" id="2_vcbul"]
+[ext_resource type="Resource" uid="uid://c1rveb0k1b35w" path="res://attack_inventory/attacks/enemy_attack/Slash.tres" id="3_i2vyh"]
+[ext_resource type="Script" uid="uid://cwr6u7fa3lfe2" path="res://enemy.gd" id="4_ahap0"]
+[ext_resource type="Texture2D" uid="uid://crgeqe80ngs0y" path="res://Sprites/enemy/world1/guard.png" id="5_4k8yf"]
+
+[resource]
+script = ExtResource("4_ahap0")
+name = "Guard"
+texture = ExtResource("5_4k8yf")
+max_hp = 37
+current_hp = 37
+atk = 6
+sp_atk = 6
+def = 6
+sp_def = 6
+agility = 4
+attack_list = Array[ExtResource("1_giym0")]([ExtResource("2_vcbul"), ExtResource("3_i2vyh")])
+is_boss = false
+skill_point_loot = 1
+metadata/_custom_type_script = "uid://cwr6u7fa3lfe2"

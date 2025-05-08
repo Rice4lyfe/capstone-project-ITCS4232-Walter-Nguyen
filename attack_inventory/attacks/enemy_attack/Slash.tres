@@ -6,7 +6,7 @@
 script = ExtResource("1_5h7lo")
 name = "Slash"
 description = "Enemy Attack"
-base_power = 0
+base_power = 2
 type = 0
 has_custom_effect = false
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

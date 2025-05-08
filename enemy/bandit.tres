@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://pripbhyun621"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_kmpmc"]
+[ext_resource type="Resource" uid="uid://c1rveb0k1b35w" path="res://attack_inventory/attacks/enemy_attack/Slash.tres" id="2_sd1iu"]
+[ext_resource type="Script" uid="uid://cwr6u7fa3lfe2" path="res://enemy.gd" id="3_8fj1a"]
+[ext_resource type="Texture2D" uid="uid://bmq7i5lbv6heb" path="res://Sprites/enemy/world1/bandit.png" id="4_ym5nl"]
+
+[resource]
+script = ExtResource("3_8fj1a")
+name = "bandit"
+texture = ExtResource("4_ym5nl")
+max_hp = 32
+current_hp = 32
+atk = 2
+sp_atk = 1
+def = 3
+sp_def = 6
+agility = 3
+attack_list = Array[ExtResource("1_kmpmc")]([ExtResource("2_sd1iu"), ExtResource("2_sd1iu"), ExtResource("2_sd1iu")])
+is_boss = false
+skill_point_loot = 1
+metadata/_custom_type_script = "uid://cwr6u7fa3lfe2"

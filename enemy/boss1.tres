@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=7 format=3 uid="uid://c4xc5r8k4rbet"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_xfatk"]
+[ext_resource type="Resource" uid="uid://c5x82g37k26m0" path="res://attack_inventory/attacks/enemy_attack/Artillery.tres" id="2_1l7ku"]
+[ext_resource type="Resource" uid="uid://bd7q76qj4pang" path="res://attack_inventory/attacks/enemy_attack/Increment.tres" id="3_11g8d"]
+[ext_resource type="Resource" uid="uid://cyxrlekad6jmf" path="res://attack_inventory/attacks/enemy_attack/NitroBlitz.tres" id="4_4uh73"]
+[ext_resource type="Script" uid="uid://cwr6u7fa3lfe2" path="res://enemy.gd" id="5_fgxfp"]
+[ext_resource type="Texture2D" uid="uid://c5vk0t2f3q34o" path="res://Sprites/enemy/world1/boss1.png" id="6_motff"]
+
+[resource]
+script = ExtResource("5_fgxfp")
+name = "Raglok"
+texture = ExtResource("6_motff")
+max_hp = 200
+current_hp = 200
+atk = 25
+sp_atk = 25
+def = 15
+sp_def = 16
+agility = 0
+attack_list = Array[ExtResource("1_xfatk")]([ExtResource("2_1l7ku"), ExtResource("3_11g8d"), ExtResource("4_4uh73")])
+is_boss = true
+skill_point_loot = 5
+metadata/_custom_type_script = "uid://cwr6u7fa3lfe2"

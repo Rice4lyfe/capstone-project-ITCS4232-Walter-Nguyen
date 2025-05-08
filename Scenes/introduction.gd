@@ -65,6 +65,7 @@ func _on_start_battle_pressed() -> void:
 	what_now.visible = false
 	preparations_menu.visible = false
 	stats_label.text = ""
+	$button_pressed.play()
 
 func _on_stats_button_pressed() -> void:
 	preparations_menu.visible = false
@@ -73,6 +74,7 @@ func _on_stats_button_pressed() -> void:
 	what_now.visible = false
 	stat_upgrade.visible = true
 	stats_label.text = ""
+	$button_pressed.play()
 
 
 func _on_skills_button_pressed() -> void:
@@ -80,8 +82,10 @@ func _on_skills_button_pressed() -> void:
 	preparations_menu.visible = false
 	stats_label.text = ""
 	equip_menu.visible = true
+	$button_pressed.play()
 
 func _on_end_button_pressed() -> void:
+	$button_pressed.play()
 	show_confirmationQuit_menu()
 	
 # Called when you need to show the confirmation menu
@@ -95,6 +99,7 @@ func show_confirmationQuit_menu() -> void:
 func _on_yes_quit_button_pressed() -> void:
 	confirmation_quit_menu.visible = false
 	PlayerStats.story_progress = 0
+	$button_pressed.play()
 	get_tree().change_scene_to_file("res://Scenes/game_over.tscn") #Change this to the Game Over Screen
 
 func _on_no_quit_button_pressed() -> void:
@@ -110,6 +115,7 @@ func _on_no_quit_button_pressed() -> void:
 		PlayerStats.agility,
 		PlayerStats.skill_points
 	]
+	$button_pressed.play()
 	
 func _on_back_pressed() -> void:
 	preparations_menu.visible = true
@@ -125,14 +131,19 @@ func _on_back_pressed() -> void:
 		PlayerStats.agility,
 		PlayerStats.skill_points
 	]
+	$button_pressed.play()
 
 
 func _on_yes_battle_button_pressed() -> void:
 	confirmation_battle.visible = false
+	$button_pressed.play()
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://Scenes/battle_scene.tscn") #Change this to the Game Over Screen
+	
 
 
 func _on_no_battle_button_pressed() -> void:
+	$button_pressed.play()
 	confirmation_battle.visible = false
 	what_now.visible = true
 	preparations_menu.visible = true

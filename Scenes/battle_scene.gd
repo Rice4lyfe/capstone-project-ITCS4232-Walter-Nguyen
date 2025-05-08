@@ -9,6 +9,12 @@ extends Control
 
 signal textbox_closed
 
+@export var enemy_bandit = preload("res://enemy/bandit.tres")
+@export var enemy_guard = preload("res://enemy/guard.tres")
+@export var enemy_boss1 = preload("res://enemy/boss1.tres")
+
+var current_enemy = Enemy
+
 var battle_won := 0
 
 var story_backgrounds = {
@@ -22,6 +28,8 @@ var escape_chance = randf()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerStats.current_hp = PlayerStats.max_hp
+	set_health($"Player Options/HP",PlayerStats.current_hp,PlayerStats.max_hp)
 	PlayerStats.story_progress = 1 #for testing
 	escape_chance = randf()
 	text_box.hide()
@@ -29,6 +37,8 @@ func _ready() -> void:
 	reset_progress_battle()
 	match PlayerStats.story_progress:
 		1:
+			current_enemy = enemy_bandit
+			spawn_enemy(current_enemy)
 			story_label.text = "Location: Den City"
 			$Background.texture = story_backgrounds["Den_City"]
 		2:
@@ -40,18 +50,27 @@ func _ready() -> void:
 		4:
 			story_label.text = "Location: ?????"
 			$Background.texture = story_backgrounds["Unknown"]
-	#display_action("Welcome!")
 	await textbox_closed
 	$"Player Options".show()
+	
+func set_health(progress_bar,health,max_health):
+	progress_bar.value = health
+	progress_bar.max_value = max_health
+	progress_bar.get_node("Label").text = "HP: %d/%d" %[health,max_health]
+	
+func spawn_enemy(current_enemy):
+	set_health($"Enemy/HP",current_enemy.current_hp,current_enemy.max_hp)
+	$Enemy/Enemy.texture = current_enemy.texture
+	$Enemy/Name.text = current_enemy.name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if Input.is_action_just_pressed("up"):
-		#if battle_won < progress_bar.get_child_count():
-			#update_battle_progress()
-			#print("Battle Won:", battle_won)
-	#if Input.is_action_just_pressed("down"):
-		#reset_progress_battle() testing
+	if Input.is_action_just_pressed("up"):
+		if battle_won < progress_bar.get_child_count():
+			update_battle_progress()
+			print("Battle Won:", battle_won)
+	if Input.is_action_just_pressed("down"):
+		reset_progress_battle() #testing
 	if text_box.visible:
 		$"Player Options".hide()
 		await textbox_closed
@@ -72,7 +91,7 @@ func update_battle_progress() -> void:
 	for i in progress_bar.get_child_count():
 		var battle = progress_bar.get_child(i)
 		if i < battle_won:
-			battle.color = Color.GREEN
+			battle.color = Color.AQUA
 		else:
 			battle.color = Color.BLACK
 	#for i in range(progress_bar.get_child_count()):
@@ -81,25 +100,40 @@ func update_battle_progress() -> void:
 			#battle_rect.modulate = Color(0, 1, 0) # Green
 		#else:
 			#battle_rect.modulate = Color(0, 0, 0) # Black
+			
 		
 func display_action(text):
 	text_box.show()
 	text_box_text.text = text
 
 func _on_escape_button_pressed() -> void:
+	$button_pressed.play()
 	confirmation_escape.visible = true
 	$"Player Options".hide()
 
 func _on_yes_retreat_pressed() -> void:
+	$button_pressed.play()
 	if escape_chance < 0.5:
 		confirmation_escape.visible = false
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"escapeWin")
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.2).timeout
 		get_tree().change_scene_to_file("res://Scenes/introduction.tscn") 
 	else:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"escapeLose")
 
 
 func _on_no_retreat_pressed() -> void:
+	$button_pressed.play()
 	confirmation_escape.visible = false
 	$"Player Options".show()
+	
+func calc_phys_damage(attacker_attack: int, defender_defense: int) -> int:
+	var base = (attacker_attack) - defender_defense #straightforward lol
+	return max(1,base + randi() % 3)
+
+func calc_spec_damage(attacker_attack: int, defender_defense: int) -> int: 
+	var base = (attacker_attack * 2) - defender_defense
+	return max(1,base + randi() % 3)
+
+func _on_attack_button_pressed() -> void:
+	pass # Replace with function body.

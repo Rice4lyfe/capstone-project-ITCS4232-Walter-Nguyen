@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://uro76y6pg8qi"]
+[gd_scene load_steps=13 format=3 uid="uid://uro76y6pg8qi"]
 
 [ext_resource type="Script" uid="uid://djjwqub74l8gc" path="res://Scenes/introduction.gd" id="1_46kw3"]
-[ext_resource type="Texture2D" uid="uid://ib7n5hw0mb86" path="res://Sprites/preperationVoid.png" id="2_gko15"]
+[ext_resource type="Texture2D" uid="uid://ib7n5hw0mb86" path="res://Sprites/bg/preperationVoid.png" id="2_gko15"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="3_gko15"]
 [ext_resource type="Script" uid="uid://d12g0r2qbfjak" path="res://Scenes/stat_upgrade.gd" id="4_s4gu6"]
+[ext_resource type="AudioStream" uid="uid://c3ycmhya8yl2k" path="res://Sound_Eff/button_press.wav" id="5_cmi4o"]
+[ext_resource type="AudioStream" uid="uid://c7ehlkea00xe1" path="res://Music/prep_music.ogg" id="6_elr4u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46kw3"]
 texture = ExtResource("2_gko15")
@@ -738,6 +740,14 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
 text = "End Game"
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cmi4o")
+
+[node name="prep_menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_elr4u")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="ConfirmationQuitMenu/VBoxContainer/yes_quit_button" to="." method="_on_yes_quit_button_pressed"]
 [connection signal="pressed" from="ConfirmationQuitMenu/VBoxContainer/no_quit_button" to="." method="_on_no_quit_button_pressed"]

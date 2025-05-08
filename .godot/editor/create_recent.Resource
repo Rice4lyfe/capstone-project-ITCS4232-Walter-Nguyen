@@ -1,1 +1,3 @@
+Enemy
+Resource
 Attack
