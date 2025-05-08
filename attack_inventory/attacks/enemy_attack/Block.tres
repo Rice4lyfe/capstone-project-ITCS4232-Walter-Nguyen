@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://r6tv8e0aerfr"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_tov75"]
+
+[resource]
+script = ExtResource("1_tov75")
+name = "Block"
+description = "Enemy Defense"
+base_power = 0
+type = 2
+has_custom_effect = false
+metadata/_custom_type_script = "uid://cr7b7rd360v4b"

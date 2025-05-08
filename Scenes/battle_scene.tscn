@@ -1,0 +1,416 @@
+[gd_scene load_steps=15 format=3 uid="uid://stf57ueqgw8x"]
+
+[ext_resource type="Script" uid="uid://f8ir40gt7fnl" path="res://Scenes/battle_scene.gd" id="1_anwxn"]
+[ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_anwxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdvqd"]
+bg_color = Color(0.306675, 0.0156652, 0.0154486, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anwxn"]
+bg_color = Color(0.14902, 1, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.189526, 0.201349, 0.196306, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gnqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt16y"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20f6w"]
+bg_color = Color(0, 0, 0, 0.698039)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4764"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5vbs"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.885262, 0.776477, 0.706238, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdvqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gnqe"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed262"]
+bg_color = Color(0, 0, 0, 0.698039)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms847"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4ggb"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anwxn")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Location" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 371.0
+offset_bottom = 35.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Location:"
+
+[node name="Location" type="Label" parent="Location"]
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 2.0
+offset_right = 1428.0
+offset_bottom = 30.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Battles Won:"
+
+[node name="BattleProgress" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = 48.0
+offset_right = -26.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_constants/separation = 5
+
+[node name="battle_1" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_2" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_3" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_4" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_5" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="EnemyContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Player Options"]
+layout_mode = 2
+offset_left = 678.0
+offset_top = -57.0
+offset_right = 1271.0
+offset_bottom = -7.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxFlat_hdvqd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_anwxn")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Player Options/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "HP: 5/20
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionContainer" type="HBoxContainer" parent="Player Options"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -613.0
+offset_top = -32.5
+offset_right = 613.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="attack_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Attack"
+
+[node name="item_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Item"
+
+[node name="ability_button" type="Button" parent="Player Options/OptionContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "ability"
+
+[node name="escape_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "escape"
+
+[node name="firstQueue" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -128.0
+offset_right = 382.0
+offset_bottom = -100.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "The First to Attack is:"
+
+[node name="Action" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.05
+anchor_right = 0.9
+anchor_bottom = 0.05
+offset_left = -5.0
+offset_top = 601.0
+offset_right = -5.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5vbs")
+
+[node name="text" type="Label" parent="Action"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "This is a test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationEscape" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationEscape"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes_retreat" type="Button" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ms847")
+text = "yes"
+
+[node name="no_retreat" type="Button" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "no"
+
+[connection signal="pressed" from="Player Options/OptionContainer/escape_button" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="ConfirmationEscape/VBoxContainer/yes_retreat" to="." method="_on_yes_retreat_pressed"]
+[connection signal="pressed" from="ConfirmationEscape/VBoxContainer/no_retreat" to="." method="_on_no_retreat_pressed"]

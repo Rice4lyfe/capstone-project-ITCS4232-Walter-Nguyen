@@ -1,0 +1,19 @@
+~ prologue
+???: Oh good you're alive.
+???: It's good to see our weapon finally realized, albeit... incomplete.
+Sava: You can't see me, but I am Sava. You are YYYY. I am the person responsible for changing your body as requested by the higher authority as you are 100% compatible with the New Reign.
+Sava: To my dismay, or my luck, you are still incomplete from what you could be truly capable of.
+Sava: That will end now.
+Sava: You are bloodbounded to eat your friends, the keys of unleashing your ultimate potential, where they will make you evolve and end this decades of war.
+Sava: There is no other choice. Sorry, not sorry.
+Sava: Of course, you are a bit shorthanded, so I will give you reaugments when requested.
+Sava: So... eat, will you?
+=> END
+
+~ escapeWin
+Successfully escaped from battle!
+=> END
+
+~ escapeLose
+Unfortunate! You can NOT escape from this battle.
+=> END

@@ -1,0 +1,16 @@
+~ story
+There is a war.
+You are weapon that is meant to ultimately win the war.
+Unfortunately, you need more power at a high price.
+...
+To live is to eat, and to eat is to live.
+CONSUME YOUR LAST FRIENDS.
+=> END
+
+~ tutorial
+Tutorial: This is a turn-based RPG. However, the battle system has been changed to prepare 3 moves from each side.
+Tutorial: Click on the desired button for the actions. Item will prompt you to pick an item from your inventory to use in a fight. Ability (after unlocked) will unleash a powerful attack. Escape gives you a chance to escape.
+Tutorial: The combat system gives you 3 out of 9 choices to make. These will be divided into 3 categories Attack, Magic, Defend. You will have an indicator on who's going first. 
+Tutorial: You have a 50/50 chance to escape from battle.
+Tutorial: Choose wisely and try to kill the enemies!
+=> END

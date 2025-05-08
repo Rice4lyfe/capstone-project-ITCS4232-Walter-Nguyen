@@ -1,0 +1,757 @@
+[gd_scene load_steps=11 format=3 uid="uid://uro76y6pg8qi"]
+
+[ext_resource type="Script" uid="uid://djjwqub74l8gc" path="res://Scenes/introduction.gd" id="1_46kw3"]
+[ext_resource type="Texture2D" uid="uid://ib7n5hw0mb86" path="res://Sprites/preperationVoid.png" id="2_gko15"]
+[ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="3_gko15"]
+[ext_resource type="Script" uid="uid://d12g0r2qbfjak" path="res://Scenes/stat_upgrade.gd" id="4_s4gu6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46kw3"]
+texture = ExtResource("2_gko15")
+modulate_color = Color(1, 0, 0.560784, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gko15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4gu6"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmi4o"]
+bg_color = Color(0, 0, 0, 0.698039)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gko15"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elr4u"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Introduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46kw3")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_46kw3")
+
+[node name="ConfirmationQuitMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationQuitMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationQuitMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes_quit_button" type="Button" parent="ConfirmationQuitMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gko15")
+text = "yes"
+
+[node name="no_quit_button" type="Button" parent="ConfirmationQuitMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "no"
+
+[node name="ConfirmationBattle" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationBattle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationBattle/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes_battle_button" type="Button" parent="ConfirmationBattle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gko15")
+text = "yes"
+
+[node name="no_battle_button" type="Button" parent="ConfirmationBattle/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "no"
+
+[node name="StatUpgrade" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_s4gu6")
+
+[node name="Upgrade Stats" type="Label" parent="StatUpgrade"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.5
+offset_top = -342.0
+offset_right = 223.5
+offset_bottom = -288.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Upgrade Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatUpgrade"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.5
+offset_top = -257.5
+offset_right = 200.5
+offset_bottom = 257.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HPContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="HPLabel" type="Label" parent="StatUpgrade/VBoxContainer/HPContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "HP:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/HPContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="ATKContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="ATKLabel" type="Label" parent="StatUpgrade/VBoxContainer/ATKContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "ATK:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATK_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/ATKContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="SPEATKContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="SPEATKLabel" type="Label" parent="StatUpgrade/VBoxContainer/SPEATKContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Spe. ATK:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SPEATK_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/SPEATKContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="DEFContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="DEFLabel" type="Label" parent="StatUpgrade/VBoxContainer/DEFContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "DEF:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEF_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/DEFContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="SPEDEFContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="SPEDEFLabel" type="Label" parent="StatUpgrade/VBoxContainer/SPEDEFContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "SPE. DEF:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SPEDEF_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/SPEDEFContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="AgilityContainer" type="HBoxContainer" parent="StatUpgrade/VBoxContainer"]
+layout_mode = 2
+
+[node name="AGILabel" type="Label" parent="StatUpgrade/VBoxContainer/AgilityContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "AGI:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AGI_plus_button" type="Button" parent="StatUpgrade/VBoxContainer/AgilityContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "++"
+
+[node name="SPLabel" type="Label" parent="StatUpgrade"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = 197.0
+offset_right = 384.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Skill Points remaining:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="StatUpgrade"]
+layout_mode = 0
+offset_left = -587.0
+offset_top = 219.0
+offset_right = -350.0
+offset_bottom = 320.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "Back"
+
+[node name="EquipMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = 66.0
+offset_right = -102.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="TabContainer" type="TabContainer" parent="EquipMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+metadata/_edit_group_ = true
+
+[node name="Attacks" type="TabBar" parent="EquipMenu/TabContainer"]
+layout_mode = 2
+current_tab = 0
+tab_count = 1
+metadata/_tab_index = 0
+
+[node name="AttackBox" type="VBoxContainer" parent="EquipMenu/TabContainer/Attacks"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 116.0
+offset_right = 381.0
+offset_bottom = 403.0
+
+[node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 30
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bite" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+layout_mode = 2
+text = "Bite:
+Basic Action To Live"
+
+[node name="Devour" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+layout_mode = 2
+text = "Devour:
+You Lose Some Life"
+
+[node name="Chomp" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+layout_mode = 2
+text = "Chomp:
+Gain Some Life"
+
+[node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+layout_mode = 2
+text = "Punisher:
+Double this attack after you have taken some
+damage."
+
+[node name="MagicBox" type="VBoxContainer" parent="EquipMenu/TabContainer/Attacks"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 116.0
+offset_right = 758.0
+offset_bottom = 403.0
+scale = Vector2(0.974899, 1.00583)
+
+[node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 30
+text = "Magic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fire" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+layout_mode = 2
+text = "Fire:
+Massive Damage at the cost of Life"
+
+[node name="Aquelve" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+layout_mode = 2
+text = "Aquelve:
+The next damage you would take is reduced"
+
+[node name="Swish" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+layout_mode = 2
+text = "Swish:
+You take a LOT more damage on the next 
+attack"
+
+[node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+layout_mode = 2
+text = "Avarite:
+Basic Magic"
+
+[node name="DefendBox" type="VBoxContainer" parent="EquipMenu/TabContainer/Attacks"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 116.0
+offset_right = 1117.0
+offset_bottom = 403.0
+scale = Vector2(0.963457, 1.00593)
+
+[node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 30
+text = "Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resist" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+layout_mode = 2
+text = "Resist:
+Raise your defenses"
+
+[node name="Rage" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+layout_mode = 2
+text = "Rage:
+Raise your attacks"
+
+[node name="Embody" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+layout_mode = 2
+text = "Embody:
+Block the damage, but can not deal
+ damage for the rest of the turn"
+
+[node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+layout_mode = 2
+text = "PKicker:
+Heal the damage you took and 
+then inflict it upon your next attack"
+
+[node name="View Items" type="TabBar" parent="EquipMenu/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_edit_group_ = true
+
+[node name="Equip Attacks" type="Label" parent="EquipMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.5
+offset_top = -342.0
+offset_right = 223.5
+offset_bottom = -288.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Equip Attacks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="EquipMenu"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 468.0
+offset_right = 273.0
+offset_bottom = 569.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "Back"
+
+[node name="StatsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 6.0
+offset_right = 70.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 35
+
+[node name="Location" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 371.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 30
+text = "Location: Home void"
+
+[node name="whatnowLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 830.0
+offset_top = 67.0
+offset_right = 1192.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "WHat now?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SPNotificationLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -573.0
+offset_top = -83.0
+offset_right = 573.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 60
+text = "Hey you have Skill points to Spend!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="initiate_buttons" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.977
+anchor_top = 1.0
+anchor_right = 0.977
+anchor_bottom = 1.0
+offset_left = -402.56
+offset_top = -539.0
+offset_right = -81.5601
+offset_bottom = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="start_battle" type="Button" parent="initiate_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "Start Run"
+
+[node name="stats_button" type="Button" parent="initiate_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "Stat Points"
+
+[node name="skills_button" type="Button" parent="initiate_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "Equip attacks
+View Items"
+
+[node name="end_button" type="Button" parent="initiate_buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gko15")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
+text = "End Game"
+
+[connection signal="pressed" from="ConfirmationQuitMenu/VBoxContainer/yes_quit_button" to="." method="_on_yes_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmationQuitMenu/VBoxContainer/no_quit_button" to="." method="_on_no_quit_button_pressed"]
+[connection signal="pressed" from="ConfirmationBattle/VBoxContainer/yes_battle_button" to="." method="_on_yes_battle_button_pressed"]
+[connection signal="pressed" from="ConfirmationBattle/VBoxContainer/no_battle_button" to="." method="_on_no_battle_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/HPContainer/HP_plus_button" to="StatUpgrade" method="_on_hp_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/ATKContainer/ATK_plus_button" to="StatUpgrade" method="_on_atk_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/SPEATKContainer/SPEATK_plus_button" to="StatUpgrade" method="_on_speatk_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/DEFContainer/DEF_plus_button" to="StatUpgrade" method="_on_def_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/SPEDEFContainer/SPEDEF_plus_button" to="StatUpgrade" method="_on_spedef_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/VBoxContainer/AgilityContainer/AGI_plus_button" to="StatUpgrade" method="_on_agi_plus_button_pressed"]
+[connection signal="pressed" from="StatUpgrade/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="EquipMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="initiate_buttons/start_battle" to="." method="_on_start_battle_pressed"]
+[connection signal="pressed" from="initiate_buttons/stats_button" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="initiate_buttons/skills_button" to="." method="_on_skills_button_pressed"]
+[connection signal="pressed" from="initiate_buttons/end_button" to="." method="_on_end_button_pressed"]

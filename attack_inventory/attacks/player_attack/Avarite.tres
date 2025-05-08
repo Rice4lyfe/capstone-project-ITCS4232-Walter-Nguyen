@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bmy3tqsrnku4u"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_3e1wy"]
+
+[resource]
+script = ExtResource("1_3e1wy")
+name = "Avarite"
+description = "The basic magic"
+base_power = 5
+type = 1
+has_custom_effect = false
+metadata/_custom_type_script = "uid://cr7b7rd360v4b"

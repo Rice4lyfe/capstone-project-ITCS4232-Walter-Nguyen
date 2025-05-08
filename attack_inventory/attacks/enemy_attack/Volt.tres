@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bbw1lrsej23m6"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_awbv8"]
+
+[resource]
+script = ExtResource("1_awbv8")
+name = "Volt"
+description = "Enemy Attack"
+base_power = 4
+type = 1
+has_custom_effect = false
+metadata/_custom_type_script = "uid://cr7b7rd360v4b"

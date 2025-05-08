@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://q56mv4b1df5t"]
+
+[ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="1_8fo1c"]
+[ext_resource type="Script" uid="uid://bptrkmky2fj87" path="res://Scenes/game_over.gd" id="1_ek8ke"]
+[ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_ek8ke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14u15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ryr"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjluv"]
+bg_color = Color(0, 0, 0, 0.698039)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtdd"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ek8ke")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eoghk")
+metadata/_edit_use_anchors_ = true
+
+[node name="game_over" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -417.0
+offset_top = 37.0
+offset_right = 421.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.639216, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -10
+theme_override_fonts/font = ExtResource("1_8fo1c")
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit_button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 549.0
+offset_right = 797.0
+offset_bottom = 672.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ek8ke")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_14u15")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3ryr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rjluv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjtdd")
+text = "quit"
+
+[connection signal="pressed" from="Panel/quit_button" to="." method="_on_quit_button_pressed"]

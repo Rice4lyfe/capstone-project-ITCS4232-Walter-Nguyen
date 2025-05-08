@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://b5m504rp6f5g5"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_rp6l4"]
+
+[resource]
+script = ExtResource("1_rp6l4")
+name = "Punisher"
+description = "Double this attack if you took damage in the last attack."
+base_power = 2
+type = 0
+has_custom_effect = false
+metadata/_custom_type_script = "uid://cr7b7rd360v4b"

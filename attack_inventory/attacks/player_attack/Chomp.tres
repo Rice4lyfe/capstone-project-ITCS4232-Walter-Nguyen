@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://dlmmmlajki828"]
+
+[ext_resource type="Script" uid="uid://cr7b7rd360v4b" path="res://attack_inventory/attack.gd" id="1_ajf4e"]
+
+[resource]
+script = ExtResource("1_ajf4e")
+name = "Chomp"
+description = "You gain some life."
+base_power = 4
+type = 0
+has_custom_effect = false
+metadata/_custom_type_script = "uid://cr7b7rd360v4b"
