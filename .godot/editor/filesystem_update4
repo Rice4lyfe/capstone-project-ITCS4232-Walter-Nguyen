@@ -9,3 +9,7 @@ res://Scenes/main_menu.gd
 res://Scenes/introduction.gd
 res://Scenes/EnemyNode.tscn
 res://enemy/bandit.tres
+res://Scenes/PlayerStats.gd
+res://Scenes/game_over.tscn
+res://Scenes/victory.tscn
+res://Scenes/victory.gd

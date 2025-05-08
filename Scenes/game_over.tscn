@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://q56mv4b1df5t"]
+[gd_scene load_steps=10 format=3 uid="uid://q56mv4b1df5t"]
 
 [ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="1_8fo1c"]
 [ext_resource type="Script" uid="uid://bptrkmky2fj87" path="res://Scenes/game_over.gd" id="1_ek8ke"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_ek8ke"]
+[ext_resource type="AudioStream" uid="uid://dhbemxs7frfqa" path="res://Music/game_over.wav" id="4_eoghk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
 
@@ -87,5 +88,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_j3ryr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rjluv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjtdd")
 text = "quit"
+
+[node name="game_over_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_eoghk")
+autoplay = true
 
 [connection signal="pressed" from="Panel/quit_button" to="." method="_on_quit_button_pressed"]

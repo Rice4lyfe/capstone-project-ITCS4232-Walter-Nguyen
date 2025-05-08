@@ -466,6 +466,7 @@ offset_left = 22.0
 offset_top = 116.0
 offset_right = 381.0
 offset_bottom = 403.0
+alignment = 1
 
 [node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
 layout_mode = 2
@@ -475,22 +476,23 @@ text = "Attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bite" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+[node name="Bite" type="Label" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
 layout_mode = 2
 text = "Bite:
 Basic Action To Live"
 
-[node name="Devour" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+[node name="Devour" type="Label" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
 layout_mode = 2
 text = "Devour:
 You Lose Some Life"
 
-[node name="Chomp" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+[node name="Chomp" type="Label" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
 layout_mode = 2
 text = "Chomp:
 Gain Some Life"
 
 [node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/AttackBox"]
+visible = false
 layout_mode = 2
 text = "Punisher:
 Double this attack after you have taken some
@@ -503,6 +505,7 @@ offset_top = 116.0
 offset_right = 758.0
 offset_bottom = 403.0
 scale = Vector2(0.974899, 1.00583)
+alignment = 1
 
 [node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
@@ -512,23 +515,24 @@ text = "Magic"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Fire" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+[node name="Fire" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Fire:
 Massive Damage at the cost of Life"
 
-[node name="Aquelve" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+[node name="Aquelve" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Aquelve:
 The next damage you would take is reduced"
 
-[node name="Swish" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+[node name="Swish" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Swish:
 You take a LOT more damage on the next 
 attack"
 
-[node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+[node name="Avarite" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
+visible = false
 layout_mode = 2
 text = "Avarite:
 Basic Magic"
@@ -540,6 +544,7 @@ offset_top = 116.0
 offset_right = 1117.0
 offset_bottom = 403.0
 scale = Vector2(0.963457, 1.00593)
+alignment = 1
 
 [node name="Attacks" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 layout_mode = 2
@@ -549,23 +554,24 @@ text = "Defense"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Resist" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+[node name="Resist" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 layout_mode = 2
 text = "Resist:
 Raise your defenses"
 
-[node name="Rage" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+[node name="Rage" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 layout_mode = 2
 text = "Rage:
 Raise your attacks"
 
-[node name="Embody" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+[node name="Embody" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 layout_mode = 2
 text = "Embody:
 Block the damage, but can not deal
  damage for the rest of the turn"
 
-[node name="Punisher" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+[node name="Pkicker" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
+visible = false
 layout_mode = 2
 text = "PKicker:
 Heal the damage you took and 
@@ -723,8 +729,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_gko15")
 theme_override_styles/hover = SubResource("StyleBoxFlat_s4gu6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cmi4o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_elr4u")
-text = "Equip attacks
-View Items"
+text = "view attacks/
+items"
 
 [node name="end_button" type="Button" parent="initiate_buttons"]
 layout_mode = 2

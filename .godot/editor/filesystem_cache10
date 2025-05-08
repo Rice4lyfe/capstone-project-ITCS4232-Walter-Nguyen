@@ -1,5 +1,5 @@
 afef6734802ee6c19677a3e11de0f0e6
-::res://::1746702384
+::res://::1746709143
 enemy.gd::GDScript/GDScript::6354009980404871439::1746699510::0::1::::Enemy<>Resource<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::2357744865663856241::1746608095::1746612057::1::::<><><>0<>0<>5435295d247991eecc3d7ad2083804c2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1746697570::0::1::::<><><>0<>0<><>::
@@ -113,8 +113,8 @@ balloon.tscn::PackedScene/PackedScene::5747764557316757295::1746612903::0::1::::
 menu_story.dialogue::Resource/Resource::1917986396226296528::1746695649::1746695649::1::::<><><>0<>0<>ab153ca92a3f8422db924ccda1e79c6c<>res://.godot/imported/menu_story.dialogue-f542cb71ca2bd798fa3b9ac7e4277b1b.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
 sample_dialogue.dialogue::Resource/Resource::3001166045228427973::1746617234::1746617234::1::::<><><>0<>0<>fe7a1b804c89977c7dc336af17daec89<>res://.godot/imported/sample_dialogue.dialogue-38c2176bf0f43cda8e1c9aa83434a606.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
 story.dialogue::Resource/Resource::1612874044566124027::1746695406::1746695406::1::::<><><>0<>0<>6b563ad54235e6c7043ec1f3e77b6cc0<>res://.godot/imported/story.dialogue-51ec2e517ae6d605073631321d6bf8dc.tres::uid://dbs4435dsf3ry::::res://addons/dialogue_manager/dialogue_resource.gd
-::res://enemy/::1746701613
-bandit.tres::Resource/Enemy::1088439663694912788::1746701228::0::1::::<><><>0<>0<><>::uid://cr7b7rd360v4b::::res://attack_inventory/attack.gd<>uid://c1rveb0k1b35w::::res://attack_inventory/attacks/enemy_attack/Slash.tres<>uid://cwr6u7fa3lfe2::::res://enemy.gd<>uid://bmq7i5lbv6heb::::res://Sprites/enemy/world1/bandit.png
+::res://enemy/::1746705972
+bandit.tres::Resource/Enemy::1088439663694912788::1746705972::0::1::::<><><>0<>0<><>::uid://cr7b7rd360v4b::::res://attack_inventory/attack.gd<>uid://c1rveb0k1b35w::::res://attack_inventory/attacks/enemy_attack/Slash.tres<>uid://cwr6u7fa3lfe2::::res://enemy.gd<>uid://bmq7i5lbv6heb::::res://Sprites/enemy/world1/bandit.png
 boss1.tres::Resource/Enemy::6855974473404471543::1746701613::0::1::::<><><>0<>0<><>::uid://cr7b7rd360v4b::::res://attack_inventory/attack.gd<>uid://c5x82g37k26m0::::res://attack_inventory/attacks/enemy_attack/Artillery.tres<>uid://bd7q76qj4pang::::res://attack_inventory/attacks/enemy_attack/Increment.tres<>uid://cyxrlekad6jmf::::res://attack_inventory/attacks/enemy_attack/NitroBlitz.tres<>uid://cwr6u7fa3lfe2::::res://enemy.gd<>uid://c5vk0t2f3q34o::::res://Sprites/enemy/world1/boss1.png
 guard.tres::Resource/Enemy::6840624470528948876::1746701129::0::1::::<><><>0<>0<><>::uid://cr7b7rd360v4b::::res://attack_inventory/attack.gd<>uid://bl25j60wlcwg0::::res://attack_inventory/attacks/enemy_attack/Focus.tres<>uid://c1rveb0k1b35w::::res://attack_inventory/attacks/enemy_attack/Slash.tres<>uid://cwr6u7fa3lfe2::::res://enemy.gd<>uid://crgeqe80ngs0y::::res://Sprites/enemy/world1/guard.png
 ::res://Font/::1746697596
@@ -125,25 +125,26 @@ inventory_item.gd::GDScript/GDScript::3367529071297924269::1746677625::0::1::::I
 playerInv.tres::Resource/Inventory::825229474928677410::1746676901::0::1::::<><><>0<>0<><>::uid://bn8iyg3w2hru0::::res://item_inventory/inventory_item.gd<>uid://bxjyb5mqrw6t1::::res://inventory.gd
 ::res://item_inventory/items/::1746697596
 potion.tres::Resource/InvItem::2663228240393313739::1746676389::0::1::::<><><>0<>0<><>::uid://bn8iyg3w2hru0::::res://item_inventory/inventory_item.gd<>uid://w2p24v8oe3xu::::res://Sprites/item/44.png
-::res://Music/::1746702721
-main_menu.ogg::AudioStreamOggVorbis::5940105905585089829::1746702360::1746702387::1::::<><><>0<>0<>0ef4e33d26ac8aaaa25454b54c31c890<>res://.godot/imported/main_menu.ogg-445bbc3da82e6ae377702ef876131fbd.oggvorbisstr::
-prep_music.ogg::AudioStreamOggVorbis::7027587068948933462::1746702706::1746702723::1::::<><><>0<>0<>2a676ab9ca1d50f229ff4e290fae289c<>res://.godot/imported/prep_music.ogg-a101de0c75c8aff70054603dc5b40877.oggvorbisstr::
-::res://Scenes/::1746702619
-battle_scene.gd::GDScript/GDScript::419586340609180937::1746699326::0::1::::<>Control<><>0<>0<><>::
-battle_scene.tscn::PackedScene::1302981233439376257::1746702430::0::1::::<><><>0<>0<><>::uid://f8ir40gt7fnl::::res://Scenes/battle_scene.gd<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf
-EnemyNode.gd::GDScript/GDScript::5217849804627678838::1746699404::0::1::::<>Node2D<><>0<>0<><>::
-EnemyNode.tscn::PackedScene/PackedScene::3954750162501804697::1746699285::0::1::::<><><>0<>0<><>::uid://cglthu46r5bvi::::res://Scenes/EnemyNode.gd<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf
+::res://Music/::1746711645
+battle_music.mp3::AudioStreamMP3::4959104988530639787::1746709120::1746709143::1::::<><><>0<>0<>346d2c53787e694c6449b23d1281520c<>res://.godot/imported/battle_music.mp3-762904a41cbc77d427b17bc63d7cc80f.mp3str::
+game_over.wav::AudioStreamWAV::7652913869102336780::1746711484::1746711507::1::::<><><>0<>0<>3af3e827f46a870e556731ed987a2a7f<>res://.godot/imported/game_over.wav-cfb5b505438f5d28dc8e67699a2b35db.sample::
+main_menu.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::5940105905585089829::1746702360::1746702387::1::::<><><>0<>0<>0ef4e33d26ac8aaaa25454b54c31c890<>res://.godot/imported/main_menu.ogg-445bbc3da82e6ae377702ef876131fbd.oggvorbisstr::
+prep_music.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::7027587068948933462::1746702706::1746702723::1::::<><><>0<>0<>2a676ab9ca1d50f229ff4e290fae289c<>res://.godot/imported/prep_music.ogg-a101de0c75c8aff70054603dc5b40877.oggvorbisstr::
+victory_music.ogg::AudioStreamOggVorbis::1264577579478702873::1746711617::1746711647::1::::<><><>0<>0<>bf4f224840b9f7655f754c2149d69805<>res://.godot/imported/victory_music.ogg-5edede3f77c76401e9638fe7881d744e.oggvorbisstr::
+::res://Scenes/::1746711530
+battle_scene.gd::GDScript::419586340609180937::1746710502::0::1::::<>Control<><>0<>0<><>::
+battle_scene.tscn::PackedScene::1302981233439376257::1746711529::0::1::::<><><>0<>0<><>::uid://f8ir40gt7fnl::::res://Scenes/battle_scene.gd<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://c3ycmhya8yl2k::::res://Sound_Eff/button_press.wav<>uid://bmq7i5lbv6heb::::res://Sprites/enemy/world1/bandit.png<>uid://ccwhy8h1h3lx8::::res://Music/battle_music.mp3
 game_over.gd::GDScript/GDScript::3479527209261786622::1746674965::0::1::::<>Control<><>0<>0<><>::
-game_over.tscn::PackedScene/PackedScene::1186857635002916539::1746674974::0::1::::<><><>0<>0<><>::uid://dmsnuc80euccg::::res://Font/Strange Dreams.ttf<>uid://bptrkmky2fj87::::res://Scenes/game_over.gd<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf
-introduction.gd::GDScript::7810906443656438458::1746702619::0::1::::<>Control<><>0<>0<><>::
-introduction.tscn::PackedScene::1439780144611329196::1746702619::0::1::::<><><>0<>0<><>::uid://djjwqub74l8gc::::res://Scenes/introduction.gd<>uid://ib7n5hw0mb86::::res://Sprites/bg/preperationVoid.png<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://d12g0r2qbfjak::::res://Scenes/stat_upgrade.gd<>uid://c3ycmhya8yl2k::::res://Sound_Eff/button_press.wav
-main_menu.gd::GDScript::5958680312374022400::1746702188::0::1::::<>Control<><>0<>0<><>::
-main_menu.tscn::PackedScene::470505436921426067::1746702431::0::1::::<><><>0<>0<><>::uid://c5sf54elkx0gs::::res://Sprites/bg/back.png<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://cq5oug4jygvp5::::res://Scenes/main_menu.gd<>uid://dmsnuc80euccg::::res://Font/Strange Dreams.ttf<>uid://c3ycmhya8yl2k::::res://Sound_Eff/button_press.wav<>uid://cqvow86n5f7jl::::res://Music/main_menu.ogg
-PlayerStats.gd::GDScript/GDScript::868383101853035603::1746683612::0::1::::<>Node<><>0<>0<><>::
+game_over.tscn::PackedScene::1186857635002916539::1746711530::0::1::::<><><>0<>0<><>::uid://dmsnuc80euccg::::res://Font/Strange Dreams.ttf<>uid://bptrkmky2fj87::::res://Scenes/game_over.gd<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://dhbemxs7frfqa::::res://Music/game_over.wav
+introduction.gd::GDScript::7810906443656438458::1746711272::0::1::::<>Control<><>0<>0<><>::
+introduction.tscn::PackedScene::1439780144611329196::1746711529::0::1::::<><><>0<>0<><>::uid://djjwqub74l8gc::::res://Scenes/introduction.gd<>uid://ib7n5hw0mb86::::res://Sprites/bg/preperationVoid.png<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://d12g0r2qbfjak::::res://Scenes/stat_upgrade.gd<>uid://c3ycmhya8yl2k::::res://Sound_Eff/button_press.wav<>uid://c7ehlkea00xe1::::res://Music/prep_music.ogg
+main_menu.gd::GDScript/GDScript::5958680312374022400::1746702188::0::1::::<>Control<><>0<>0<><>::
+main_menu.tscn::PackedScene::470505436921426067::1746711529::0::1::::<><><>0<>0<><>::uid://c5sf54elkx0gs::::res://Sprites/bg/back.png<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf<>uid://cq5oug4jygvp5::::res://Scenes/main_menu.gd<>uid://dmsnuc80euccg::::res://Font/Strange Dreams.ttf<>uid://c3ycmhya8yl2k::::res://Sound_Eff/button_press.wav<>uid://cqvow86n5f7jl::::res://Music/main_menu.ogg
+PlayerStats.gd::GDScript::868383101853035603::1746711273::0::1::::<>Node<><>0<>0<><>::
 stat_upgrade.gd::GDScript/GDScript::9040320067167162022::1746635784::0::1::::<>Panel<><>0<>0<><>::
 victory.tscn::PackedScene/PackedScene::7226564381484422625::1746674873::0::1::::<><><>0<>0<><>::uid://dmsnuc80euccg::::res://Font/Strange Dreams.ttf<>uid://brpjmavbokdx0::::res://Font/upheavtt.ttf
 ::res://Sound_Eff/::1746702048
-button_press.wav::AudioStreamWAV::6787817323644748188::1746702033::1746702048::1::::<><><>0<>0<>eca1b58907e355c7497d7698fcac938d<>res://.godot/imported/button_press.wav-5bc71fdcc442ee031d67a26f50fe8da8.sample::
+button_press.wav::AudioStreamWAV/AudioStreamWAV::6787817323644748188::1746702033::1746702048::1::::<><><>0<>0<>eca1b58907e355c7497d7698fcac938d<>res://.godot/imported/button_press.wav-5bc71fdcc442ee031d67a26f50fe8da8.sample::
 ::res://Sprites/::1746700221
 Readme.txt::TextFile/TextFile::-1::1475364711::0::1::::<><><>0<>0<><>::
 ::res://Sprites/attack/::1746700224

@@ -24,16 +24,12 @@ func _ready() -> void:
 	skill_points_nofi.visible = false #Skill point notification
 	stat_upgrade.visible = false #stats menu
 	equip_menu.visible = false #equip menu
-	var complete_prologue = false
-	var complete_chapter_1 = false
-	var complete_chapter_2= false
-	var complete_chapter_3 = false
 	#DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"prologue")
 	#DialogueManager.dialogue_ended.connect(_on_preperations)
 	match PlayerStats.story_progress:
 		0:
-			if (complete_prologue == false):
-				complete_prologue = true
+			if (PlayerStats.complete_prologue == false):
+				PlayerStats.complete_prologue = true
 				DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"prologue")
 				DialogueManager.dialogue_ended.connect(_on_preperations)
 			PlayerStats.story_progress += 1

@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://da7upvidtu3nh"]
+[gd_scene load_steps=10 format=3 uid="uid://da7upvidtu3nh"]
 
+[ext_resource type="Script" uid="uid://do00rgf17itl2" path="res://Scenes/victory.gd" id="1_7yj50"]
 [ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="2_7yj50"]
+[ext_resource type="AudioStream" uid="uid://satn4veih82h" path="res://Music/victory_music.ogg" id="3_o3goa"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="3_slr2v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
@@ -38,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7yj50")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -103,5 +106,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_j3ryr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rjluv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gjtdd")
 text = "quit"
+
+[node name="victory_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o3goa")
+volume_db = 7.496
+autoplay = true
 
 [connection signal="pressed" from="Panel/quit_button" to="." method="_on_quit_button_pressed"]

@@ -11,6 +11,11 @@ var agility: int
 var story_progress: int = 0
 var skill_points: int = 2
 
+var complete_prologue = false
+var complete_chapter_1 = false
+var complete_chapter_2= false
+var complete_chapter_3 = false
+
 var inventory: Array[Item] = []
 const MAX_ITEMS = 3
 
@@ -25,15 +30,15 @@ var all_player_attacks: Array[Attack] = [
 	preload("res://attack_inventory/attacks/player_attack/Bite.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Devour.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Chomp.tres"),
-	preload("res://attack_inventory/attacks/player_attack/Punisher.tres"),
+	#preload("res://attack_inventory/attacks/player_attack/Punisher.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Fire.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Aquelve.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Swish.tres"),
-	preload("res://attack_inventory/attacks/player_attack/Avarite.tres"),
+	#preload("res://attack_inventory/attacks/player_attack/Avarite.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Resist.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Rage.tres"),
 	preload("res://attack_inventory/attacks/player_attack/Embody.tres"),
-	preload("res://attack_inventory/attacks/player_attack/PKicker.tres")
+	#preload("res://attack_inventory/attacks/player_attack/PKicker.tres")
 ]
 
 #Punisher - 2 attack. Double this attack if you did take damage the last attack (in the stack)
