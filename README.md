@@ -6,7 +6,7 @@
  Credits:
  Dodge the Creeps! A godot tutorial that kicked off my journey. https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html
  ChatGPT for assisting me with the code https://chatgpt.com/
- turn based combat system for godot by Jon Topielski https://www.youtube.com/watch?v=ifXGvlAn0bY
+ turn based combat system for godot by Jon Topielski https://www.youtube.com/watch?v=ifXGvlAn0bY (baseline for the turn based action. SO MUCH EASIER TO DO IN GODOT THAN GAMEMAKER)
  godot menu by Coco Codehttps://www.youtube.com/watch?v=zHYkcJyE52g
  Spacebackground by Westbeam https://opengameart.org/content/space-background-1
  Upheaval font https://www.dafont.com/upheaval.font
