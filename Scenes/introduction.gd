@@ -15,6 +15,12 @@ extends Control
 
 @onready var equip_menu = $EquipMenu
 
+@onready var item_buttons = [
+	$EquipMenu/TabContainer/VBoxContainer/Item1,
+	$EquipMenu/TabContainer/VBoxContainer/Item2,
+	$EquipMenu/TabContainer/VBoxContainer/Item3
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	preparations_menu.visible = false #the buttons at the start of the gmae
@@ -34,6 +40,24 @@ func _ready() -> void:
 				DialogueManager.dialogue_ended.connect(_on_preperations)
 			PlayerStats.story_progress += 1
 		1:
+			_on_preperations()
+		2:
+			if (PlayerStats.complete_chapter_1 == false):
+				PlayerStats.complete_chapter_1 = true
+				DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"chapter_1")
+				DialogueManager.dialogue_ended.connect(_on_preperations)
+			_on_preperations()
+		3:
+			if (PlayerStats.complete_chapter_2 == false):
+				PlayerStats.complete_chapter_2 = true
+				DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"chapter_2")
+				DialogueManager.dialogue_ended.connect(_on_preperations)
+			_on_preperations()
+		4:
+			if (PlayerStats.complete_chapter_3 == false):
+				PlayerStats.complete_chapter_3 = true
+				DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"chapter_2")
+				DialogueManager.dialogue_ended.connect(_on_preperations)
 			_on_preperations()
 
 func _process(_delta: float) -> void:
@@ -153,3 +177,35 @@ func _on_no_battle_button_pressed() -> void:
 		PlayerStats.skill_points
 	]
 	
+func update_item_menu():
+	for i in item_buttons.size():
+		if i < PlayerStats.inventory.size():
+			var item = PlayerStats.inventory[i]
+			item_buttons[i].text = item.name + item.description
+			item_buttons[i].disabled = false
+			item_buttons[i].connect("pressed", Callable(self, "_on_item_pressed").bind(item,i))
+		else:
+			item_buttons[i].text = "Empty"
+			item_buttons[i].disabled = true
+
+func _on_item_pressed(item: Item, index: int):
+	apply_item_effect(PlayerStats, item.effect_type, item.effect_strength)
+	PlayerStats.inventory.remove_at(index)
+	update_item_menu()
+	
+func apply_item_effect(target, effect_type: Item.EffectType, strength: int) -> void:
+	match effect_type:
+		Item.EffectType.HEAL:
+			target.current_hp = clamp(target.current_hp + strength, 0, target.max_hp)
+		Item.EffectType.BUFF_ATTACK:
+			target.atk += strength
+			target.spe_atk += strength
+		Item.EffectType.BUFF_DEF:
+			target.def += strength
+			target.sp_def += strength
+		Item.EffectType.RAISE_AGILITY:
+			target.agility += strength
+
+
+func _on_view_items_tab_clicked(tab: int) -> void:
+	update_item_menu()

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://nlx2w8t8psb"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_8mb0p"]
+[ext_resource type="Texture2D" uid="uid://c4piaxoxcmcyf" path="res://Sprites/item/61.png" id="2_r6fig"]
+
+[resource]
+script = ExtResource("1_8mb0p")
+name = "Medium Gauntlet"
+texture = ExtResource("2_r6fig")
+description = "Increase your strength by 2 (perma"
+effect_type = 2
+effect_strength = 2
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

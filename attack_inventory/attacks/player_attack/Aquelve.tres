@@ -8,5 +8,6 @@ name = "Aquelve"
 description = "The next damage you take is reduced."
 base_power = 2
 type = 1
-has_custom_effect = false
+effect_type = 1
+effect_strength = 9
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

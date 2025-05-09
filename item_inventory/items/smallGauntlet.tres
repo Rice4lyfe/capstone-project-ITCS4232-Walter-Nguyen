@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://t4daffhlnthd"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_vu5f0"]
+[ext_resource type="Texture2D" uid="uid://c4piaxoxcmcyf" path="res://Sprites/item/61.png" id="2_p08kf"]
+
+[resource]
+script = ExtResource("1_vu5f0")
+name = "Small Gauntlet"
+texture = ExtResource("2_p08kf")
+description = "Increase your strength by 1 (perma"
+effect_type = 2
+effect_strength = 1
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

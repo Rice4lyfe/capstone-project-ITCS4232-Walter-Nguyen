@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bsbuqgwl31iv6"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_syxva"]
+[ext_resource type="Texture2D" uid="uid://w2p24v8oe3xu" path="res://Sprites/item/44.png" id="2_cxiyh"]
+
+[resource]
+script = ExtResource("1_syxva")
+name = "Big Potion"
+texture = ExtResource("2_cxiyh")
+description = "heals you for a large amount"
+effect_type = 1
+effect_strength = 18
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

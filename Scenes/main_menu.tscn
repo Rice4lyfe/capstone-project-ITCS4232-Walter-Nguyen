@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://gx6fkd0atvu6"]
+[gd_scene load_steps=16 format=3 uid="uid://gx6fkd0atvu6"]
 
 [ext_resource type="Texture2D" uid="uid://c5sf54elkx0gs" path="res://Sprites/bg/back.png" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://cq5oug4jygvp5" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://rmapconnqfff" path="res://Sprites/enemy/world3/boss3.png" id="3_16hvj"]
 [ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://vqhvfph6pq72" path="res://Sprites/enemy/world2/boss2.png" id="4_vr1f0"]
 [ext_resource type="AudioStream" uid="uid://c3ycmhya8yl2k" path="res://Sound_Eff/button_press.wav" id="5_n45e2"]
+[ext_resource type="Texture2D" uid="uid://c5vk0t2f3q34o" path="res://Sprites/enemy/world1/boss1.png" id="5_t1dhk"]
 [ext_resource type="AudioStream" uid="uid://cqvow86n5f7jl" path="res://Music/main_menu.ogg" id="6_opfnp"]
+[ext_resource type="Texture2D" uid="uid://bp14cfjf42ebn" path="res://Sprites/enemy/world3/disciple.png" id="10_16hvj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 texture = ExtResource("1_1ehe0")
@@ -54,6 +58,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_n45e2")
 
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(1087, 582)
+scale = Vector2(1.55469, 1.55469)
+texture = ExtResource("3_16hvj")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -68,6 +77,16 @@ offset_bottom = 223.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(563, -13.5)
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("4_vr1f0")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(-295, 262.5)
+scale = Vector2(2.45313, 2.45313)
+texture = ExtResource("5_t1dhk")
 
 [node name="play_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -151,6 +170,13 @@ stream = ExtResource("5_n45e2")
 stream = ExtResource("6_opfnp")
 autoplay = true
 parameters/looping = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(210, 286)
+scale = Vector2(3.95196, 3.95196)
+texture = ExtResource("10_16hvj")
+hframes = 5
+vframes = 3
 
 [connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/tutorial_button" to="." method="_on_tutorial_pressed"]

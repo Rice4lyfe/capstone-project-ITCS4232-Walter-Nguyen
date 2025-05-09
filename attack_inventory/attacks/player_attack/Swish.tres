@@ -8,5 +8,6 @@ name = "Swish"
 description = "You take a lot more damage on the next attack."
 base_power = 12
 type = 1
-has_custom_effect = false
+effect_type = 2
+effect_strength = 13
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

@@ -8,5 +8,6 @@ name = "Rage"
 description = "Raise your Attack"
 base_power = 0
 type = 2
-has_custom_effect = false
+effect_type = 0
+effect_strength = 2
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

@@ -451,10 +451,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 metadata/_edit_group_ = true
 
 [node name="Attacks" type="TabBar" parent="EquipMenu/TabContainer"]
+visible = false
 layout_mode = 2
 current_tab = 0
 tab_count = 1
@@ -518,18 +519,17 @@ vertical_alignment = 1
 [node name="Fire" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Fire:
-Massive Damage at the cost of Life"
+Basic Magic Damage"
 
 [node name="Aquelve" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Aquelve:
-The next damage you would take is reduced"
+Dive to Heal for some"
 
 [node name="Swish" type="Label" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 layout_mode = 2
 text = "Swish:
-You take a LOT more damage on the next 
-attack"
+Take half of your life"
 
 [node name="Avarite" type="Button" parent="EquipMenu/TabContainer/Attacks/MagicBox"]
 visible = false
@@ -567,8 +567,7 @@ Raise your attacks"
 [node name="Embody" type="Label" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 layout_mode = 2
 text = "Embody:
-Block the damage, but can not deal
- damage for the rest of the turn"
+Heal your life"
 
 [node name="Pkicker" type="Button" parent="EquipMenu/TabContainer/Attacks/DefendBox"]
 visible = false
@@ -578,10 +577,28 @@ Heal the damage you took and
 then inflict it upon your next attack"
 
 [node name="View Items" type="TabBar" parent="EquipMenu/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EquipMenu/TabContainer/View Items"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 197.0
+offset_right = 1074.0
+offset_bottom = 515.0
+
+[node name="Item1" type="Button" parent="EquipMenu/TabContainer/View Items/VBoxContainer"]
+layout_mode = 2
+text = "Item 1"
+
+[node name="Item2" type="Button" parent="EquipMenu/TabContainer/View Items/VBoxContainer"]
+layout_mode = 2
+text = "Item 2"
+
+[node name="Item3" type="Button" parent="EquipMenu/TabContainer/View Items/VBoxContainer"]
+layout_mode = 2
+text = "Item 3"
 
 [node name="Equip Attacks" type="Label" parent="EquipMenu"]
 layout_mode = 1
@@ -766,6 +783,7 @@ parameters/looping = true
 [connection signal="pressed" from="StatUpgrade/VBoxContainer/SPEDEFContainer/SPEDEF_plus_button" to="StatUpgrade" method="_on_spedef_plus_button_pressed"]
 [connection signal="pressed" from="StatUpgrade/VBoxContainer/AgilityContainer/AGI_plus_button" to="StatUpgrade" method="_on_agi_plus_button_pressed"]
 [connection signal="pressed" from="StatUpgrade/Back" to="." method="_on_back_pressed"]
+[connection signal="tab_clicked" from="EquipMenu/TabContainer/View Items" to="." method="_on_view_items_tab_clicked"]
 [connection signal="pressed" from="EquipMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="initiate_buttons/start_battle" to="." method="_on_start_battle_pressed"]
 [connection signal="pressed" from="initiate_buttons/stats_button" to="." method="_on_stats_button_pressed"]

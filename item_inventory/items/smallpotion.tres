@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cn35r411xxghd"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_mv8om"]
+[ext_resource type="Texture2D" uid="uid://w2p24v8oe3xu" path="res://Sprites/item/44.png" id="2_8yp2u"]
+
+[resource]
+script = ExtResource("1_mv8om")
+name = "Small Potion"
+texture = ExtResource("2_8yp2u")
+description = "heals you for a small amount"
+effect_type = 1
+effect_strength = 3
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

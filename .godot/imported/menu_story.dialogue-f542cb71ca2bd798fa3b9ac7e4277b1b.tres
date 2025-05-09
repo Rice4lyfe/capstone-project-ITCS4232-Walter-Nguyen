@@ -27,46 +27,39 @@ lines = {
 &"character": "Tutorial",
 &"id": "10",
 &"next_id": "11",
-&"text": "This is a turn-based RPG. However, the battle system has been changed to prepare 3 moves from each side.",
+&"text": "This is a turn-based RPG. Click on the desired button for the actions. Item will prompt you to pick an item from your inventory to use in a fight. Ability (after unlocked) will unleash a powerful attack. Escape gives you a chance to escape.",
 &"type": "dialogue"
 },
 "11": {
 &"character": "Tutorial",
 &"id": "11",
 &"next_id": "12",
-&"text": "Click on the desired button for the actions. Item will prompt you to pick an item from your inventory to use in a fight. Ability (after unlocked) will unleash a powerful attack. Escape gives you a chance to escape.",
+&"text": "The combat system gives 9 choices to make. These will be divided into 3 categories Attack, Magic, Defend.",
 &"type": "dialogue"
 },
 "12": {
 &"character": "Tutorial",
 &"id": "12",
 &"next_id": "13",
-&"text": "The combat system gives you 3 out of 9 choices to make. These will be divided into 3 categories Attack, Magic, Defend. You will have an indicator on who's going first.",
+&"text": "You have a 50/50 chance to escape from battle.",
 &"type": "dialogue"
 },
 "13": {
 &"character": "Tutorial",
 &"id": "13",
 &"next_id": "14",
-&"text": "You have a 50/50 chance to escape from battle.",
-&"type": "dialogue"
-},
-"14": {
-&"character": "Tutorial",
-&"id": "14",
-&"next_id": "15",
 &"text": "Choose wisely and try to kill the enemies!",
 &"type": "dialogue"
 },
-"15": {
-&"id": "15",
+"14": {
+&"id": "14",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
 },
-"16": {
-&"id": "16",
+"15": {
+&"id": "15",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
@@ -130,9 +123,8 @@ CONSUME YOUR LAST FRIENDS.
 => END
 
 ~ tutorial
-Tutorial: This is a turn-based RPG. However, the battle system has been changed to prepare 3 moves from each side.
-Tutorial: Click on the desired button for the actions. Item will prompt you to pick an item from your inventory to use in a fight. Ability (after unlocked) will unleash a powerful attack. Escape gives you a chance to escape.
-Tutorial: The combat system gives you 3 out of 9 choices to make. These will be divided into 3 categories Attack, Magic, Defend. You will have an indicator on who's going first. 
+Tutorial: This is a turn-based RPG. Click on the desired button for the actions. Item will prompt you to pick an item from your inventory to use in a fight. Ability (after unlocked) will unleash a powerful attack. Escape gives you a chance to escape.
+Tutorial: The combat system gives 9 choices to make. These will be divided into 3 categories Attack, Magic, Defend.
 Tutorial: You have a 50/50 chance to escape from battle.
 Tutorial: Choose wisely and try to kill the enemies!
 => END"

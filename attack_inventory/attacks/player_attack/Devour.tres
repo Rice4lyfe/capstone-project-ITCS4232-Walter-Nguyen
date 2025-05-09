@@ -6,7 +6,8 @@
 script = ExtResource("1_6w504")
 name = "Devour"
 description = "You lose some life."
-base_power = 6
+base_power = 7
 type = 0
-has_custom_effect = false
+effect_type = 2
+effect_strength = 3
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

@@ -8,7 +8,7 @@ var sp_atk: int
 var def: int
 var sp_def: int
 var agility: int
-var story_progress: int = 0
+var story_progress: int = 2
 var skill_points: int = 2
 
 var complete_prologue = false
@@ -68,6 +68,7 @@ func _init():
 	agility = randi_range(4, 4)
 	story_progress = 0
 	skill_points = 2
+	inventory = []
 	
 func _ready() -> void:
 	for attack in all_player_attacks:

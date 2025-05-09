@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://q56mv4b1df5t"]
+[gd_scene load_steps=12 format=3 uid="uid://q56mv4b1df5t"]
 
 [ext_resource type="FontFile" uid="uid://dmsnuc80euccg" path="res://Font/Strange Dreams.ttf" id="1_8fo1c"]
 [ext_resource type="Script" uid="uid://bptrkmky2fj87" path="res://Scenes/game_over.gd" id="1_ek8ke"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://c5sf54elkx0gs" path="res://Sprites/bg/back.png" id="2_j3ryr"]
 [ext_resource type="AudioStream" uid="uid://dhbemxs7frfqa" path="res://Music/game_over.wav" id="4_eoghk"]
+[ext_resource type="Texture2D" uid="uid://cnu5g0i4lw6iv" path="res://Sprites/bg/globe.png" id="5_14u15"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eoghk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjluv"]
+texture = ExtResource("2_j3ryr")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14u15"]
 
@@ -49,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_eoghk")
+theme_override_styles/panel = SubResource("StyleBoxTexture_rjluv")
 metadata/_edit_use_anchors_ = true
 
 [node name="game_over" type="Label" parent="Panel"]
@@ -92,5 +95,31 @@ text = "quit"
 [node name="game_over_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_eoghk")
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 135.0
+offset_right = 838.0
+offset_bottom = 549.0
+texture = ExtResource("5_14u15")
+
+[node name="game_over2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -404.0
+offset_top = 168.0
+offset_right = 434.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.639216, 0, 0, 1)
+theme_override_constants/shadow_offset_y = -2
+theme_override_fonts/font = ExtResource("1_8fo1c")
+theme_override_font_sizes/font_size = 80
+text = "You have failed"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/quit_button" to="." method="_on_quit_button_pressed"]

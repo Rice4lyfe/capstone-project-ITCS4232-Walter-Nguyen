@@ -10,10 +10,77 @@ Sava: Of course, you are a bit shorthanded, so I will give you reaugments when r
 Sava: So... eat, will you?
 => END
 
+~ chapter_1
+Sava: How did it feel to eat one of your very own friends?
+Sava: Well you must've heard from raglok about how great you were. Oh? Nevermind. 
+Sava: What's better to do anyways? Do you want to die after your life was saved?
+=> END
+
+~ chapter_2
+Sava: Another one falls. A shame. They could have been as great as I was, and yet she is now a part of the New Reign.
+Sava: Enjoy the last meal.
+=> END
+
+~ chapter_3
+Sava: You have ascended. Congratulations. Whooooooooopeeeeee.
+Sava: ...
+Sava: And now it is time for you to face Him. Go on. Do your Purpose.
+Sava: ...
+Sava: What about me?
+Sava: I'm just the scientist that saved the world from the Old Reign.
+=> END
+
+~ tease
+Sava: Are any of these lackeys giving you trouble?
+=> END
+
 ~ escapeWin
 Successfully escaped from battle!
 => END
 
 ~ escapeLose
 Unfortunate! You can NOT escape from this battle.
+=> END
+
+~ raglokIntro
+Raglok: ...
+Raglok: It can't be.
+Raglok: You have the New Reign now? But I- no WE saw you die on the battlefield earlier.
+Raglok: ... unless it's Sava.
+Raglok: ... of course it would be.
+Raglok: I will stand my ground. Do not think that becoming a god would end HIM.
+Raglok: This will be out of mercy.
+=> END
+
+~ raglokEnd
+Raglok: So this is the part where the New Reign Comes in to absorb my soul.
+Raglok: I can only wish you the best.
+=> END
+
+~ merolasIntro
+Merolas: To be forced to partake in an evil ritual out of your own free will. You have absorbed Raglok yes?
+Merolas: Sava isn't an evil person by any means, but they mayhaps be a coward, if I may ask.
+Merolas: Die, please.
+=> END
+
+~ merolasEnd
+Merolas: Hey, YYYY, before you eat me, will you... at least promise to Him that I will wring out his own heart as I become your right hand?
+=> END
+
+~ sijiIntro
+Siji: There are thousands of delicious food across the universe and they are for everyone.
+Siji: And yet, you are born here as if it was not by punishment, but the humility of us.
+Siji: I will join you, but I want to face you as an EQUAL!
+=> END
+
+~ sijiEnd
+Siji: Aye. Amen. Alo. And. Across the universe.
+=> END
+
+~ himIntro
+Him: I am him.
+=> END
+
+~ himOutro
+Him: You are him.
 => END

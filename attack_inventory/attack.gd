@@ -4,6 +4,15 @@ class_name Attack
 
 enum ActionType { ATTACK, MAGIC, DEFEND }
 
+enum EffectType {
+	NONE,
+	HEAL,
+	TAKE_DAMAGE,
+	BUFF_ATTACK,
+	BUFF_DEF,
+	RAISE_AGILITY
+}
+
 @export var name: String = ""
 @export var texture: Texture2D
 @export var description: String = ""
@@ -11,4 +20,5 @@ enum ActionType { ATTACK, MAGIC, DEFEND }
 @export var type: ActionType = ActionType.ATTACK
 
 # Placeholder for custom logic — you can attach scripts/functions later
-@export var has_custom_effect: bool = false
+@export var effect_type: EffectType = EffectType.NONE
+@export var effect_strength: int = 0

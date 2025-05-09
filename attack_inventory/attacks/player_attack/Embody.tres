@@ -8,5 +8,6 @@ name = "Embody"
 description = "Block the attack, but any other attack does 0 damage"
 base_power = 0
 type = 2
-has_custom_effect = false
+effect_type = 1
+effect_strength = 4
 metadata/_custom_type_script = "uid://cr7b7rd360v4b"

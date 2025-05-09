@@ -6,11 +6,23 @@
 script = ExtResource("1_uyeqc")
 using_states = PackedStringArray()
 titles = {
-"escapeLose": "17",
-"escapeWin": "13",
-"prologue": "1"
+"chapter_1": "13",
+"chapter_2": "19",
+"chapter_3": "24",
+"escapeLose": "41",
+"escapeWin": "37",
+"himIntro": "80",
+"himOutro": "84",
+"merolasEnd": "66",
+"merolasIntro": "60",
+"prologue": "1",
+"raglokEnd": "55",
+"raglokIntro": "45",
+"sijiEnd": "76",
+"sijiIntro": "70",
+"tease": "33"
 }
-character_names = PackedStringArray("???", "Sava")
+character_names = PackedStringArray("???", "Sava", "Raglok", "Merolas", "Siji", "Him")
 first_title = "0"
 lines = {
 "0": {
@@ -43,53 +55,121 @@ lines = {
 &"type": "title"
 },
 "13": {
+&"character": "Sava",
 &"id": "13",
 &"next_id": "14",
-&"text": "Successfully escaped from battle!",
+&"text": "How did it feel to eat one of your very own friends?",
 &"type": "dialogue"
 },
 "14": {
+&"character": "Sava",
 &"id": "14",
+&"next_id": "15",
+&"text": "Well you must've heard from raglok about how great you were. Oh? Nevermind.",
+&"type": "dialogue"
+},
+"15": {
+&"character": "Sava",
+&"id": "15",
+&"next_id": "16",
+&"text": "What's better to do anyways? Do you want to die after your life was saved?",
+&"type": "dialogue"
+},
+"16": {
+&"id": "16",
 &"is_snippet": false,
 &"next_id": "end",
 &"next_id_after": "",
 &"type": "goto"
-},
-"15": {
-&"id": "15",
-&"next_id": "16",
-&"type": ""
-},
-"16": {
-&"id": "16",
-&"next_id": "17",
-&"type": "title"
 },
 "17": {
 &"id": "17",
 &"next_id": "18",
-&"text": "Unfortunate! You can NOT escape from this battle.",
-&"type": "dialogue"
+&"type": ""
 },
 "18": {
 &"id": "18",
-&"is_snippet": false,
-&"next_id": "end",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "19",
+&"type": "title"
 },
 "19": {
+&"character": "Sava",
 &"id": "19",
-&"is_snippet": false,
-&"next_id": "end",
-&"next_id_after": "",
-&"type": "goto"
+&"next_id": "20",
+&"text": "Another one falls. A shame. They could have been as great as I was, and yet she is now a part of the New Reign.",
+&"type": "dialogue"
 },
 "2": {
 &"character": "???",
 &"id": "2",
 &"next_id": "3",
 &"text": "It's good to see our weapon finally realized, albeit... incomplete.",
+&"type": "dialogue"
+},
+"20": {
+&"character": "Sava",
+&"id": "20",
+&"next_id": "21",
+&"text": "Enjoy the last meal.",
+&"type": "dialogue"
+},
+"21": {
+&"id": "21",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"22": {
+&"id": "22",
+&"next_id": "23",
+&"type": ""
+},
+"23": {
+&"id": "23",
+&"next_id": "24",
+&"type": "title"
+},
+"24": {
+&"character": "Sava",
+&"id": "24",
+&"next_id": "25",
+&"text": "You have ascended. Congratulations. Whooooooooopeeeeee.",
+&"type": "dialogue"
+},
+"25": {
+&"character": "Sava",
+&"id": "25",
+&"next_id": "26",
+&"text": "...",
+&"type": "dialogue"
+},
+"26": {
+&"character": "Sava",
+&"id": "26",
+&"next_id": "27",
+&"text": "And now it is time for you to face Him. Go on. Do your Purpose.",
+&"type": "dialogue"
+},
+"27": {
+&"character": "Sava",
+&"id": "27",
+&"next_id": "28",
+&"text": "...",
+&"type": "dialogue"
+},
+"28": {
+&"character": "Sava",
+&"id": "28",
+&"next_id": "29",
+&"text": "What about me?",
+&"type": "dialogue"
+},
+"29": {
+&"character": "Sava",
+&"id": "29",
+&"next_id": "30",
+&"text": "I'm just the scientist that saved the world from the Old Reign.",
 &"type": "dialogue"
 },
 "3": {
@@ -99,11 +179,133 @@ lines = {
 &"text": "You can't see me, but I am Sava. You are YYYY. I am the person responsible for changing your body as requested by the higher authority as you are 100% compatible with the New Reign.",
 &"type": "dialogue"
 },
+"30": {
+&"id": "30",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"31": {
+&"id": "31",
+&"next_id": "32",
+&"type": ""
+},
+"32": {
+&"id": "32",
+&"next_id": "33",
+&"type": "title"
+},
+"33": {
+&"character": "Sava",
+&"id": "33",
+&"next_id": "34",
+&"text": "Are any of these lackeys giving you trouble?",
+&"type": "dialogue"
+},
+"34": {
+&"id": "34",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"35": {
+&"id": "35",
+&"next_id": "36",
+&"type": ""
+},
+"36": {
+&"id": "36",
+&"next_id": "37",
+&"type": "title"
+},
+"37": {
+&"id": "37",
+&"next_id": "38",
+&"text": "Successfully escaped from battle!",
+&"type": "dialogue"
+},
+"38": {
+&"id": "38",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"39": {
+&"id": "39",
+&"next_id": "40",
+&"type": ""
+},
 "4": {
 &"character": "Sava",
 &"id": "4",
 &"next_id": "5",
 &"text": "To my dismay, or my luck, you are still incomplete from what you could be truly capable of.",
+&"type": "dialogue"
+},
+"40": {
+&"id": "40",
+&"next_id": "41",
+&"type": "title"
+},
+"41": {
+&"id": "41",
+&"next_id": "42",
+&"text": "Unfortunate! You can NOT escape from this battle.",
+&"type": "dialogue"
+},
+"42": {
+&"id": "42",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"43": {
+&"id": "43",
+&"next_id": "44",
+&"type": ""
+},
+"44": {
+&"id": "44",
+&"next_id": "45",
+&"type": "title"
+},
+"45": {
+&"character": "Raglok",
+&"id": "45",
+&"next_id": "46",
+&"text": "...",
+&"type": "dialogue"
+},
+"46": {
+&"character": "Raglok",
+&"id": "46",
+&"next_id": "47",
+&"text": "It can't be.",
+&"type": "dialogue"
+},
+"47": {
+&"character": "Raglok",
+&"id": "47",
+&"next_id": "48",
+&"text": "You have the New Reign now? But I- no WE saw you die on the battlefield earlier.",
+&"type": "dialogue"
+},
+"48": {
+&"character": "Raglok",
+&"id": "48",
+&"next_id": "49",
+&"text": "... unless it's Sava.",
+&"type": "dialogue"
+},
+"49": {
+&"character": "Raglok",
+&"id": "49",
+&"next_id": "50",
+&"text": "... of course it would be.",
 &"type": "dialogue"
 },
 "5": {
@@ -113,12 +315,136 @@ lines = {
 &"text": "That will end now.",
 &"type": "dialogue"
 },
+"50": {
+&"character": "Raglok",
+&"id": "50",
+&"next_id": "51",
+&"text": "I will stand my ground. Do not think that becoming a god would end HIM.",
+&"type": "dialogue"
+},
+"51": {
+&"character": "Raglok",
+&"id": "51",
+&"next_id": "52",
+&"text": "This will be out of mercy.",
+&"type": "dialogue"
+},
+"52": {
+&"id": "52",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"53": {
+&"id": "53",
+&"next_id": "54",
+&"type": ""
+},
+"54": {
+&"id": "54",
+&"next_id": "55",
+&"type": "title"
+},
+"55": {
+&"character": "Raglok",
+&"id": "55",
+&"next_id": "56",
+&"text": "So this is the part where the New Reign Comes in to absorb my soul.",
+&"type": "dialogue"
+},
+"56": {
+&"character": "Raglok",
+&"id": "56",
+&"next_id": "57",
+&"text": "I can only wish you the best.",
+&"type": "dialogue"
+},
+"57": {
+&"id": "57",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"58": {
+&"id": "58",
+&"next_id": "59",
+&"type": ""
+},
+"59": {
+&"id": "59",
+&"next_id": "60",
+&"type": "title"
+},
 "6": {
 &"character": "Sava",
 &"id": "6",
 &"next_id": "7",
 &"text": "You are bloodbounded to eat your friends, the keys of unleashing your ultimate potential, where they will make you evolve and end this decades of war.",
 &"type": "dialogue"
+},
+"60": {
+&"character": "Merolas",
+&"id": "60",
+&"next_id": "61",
+&"text": "To be forced to partake in an evil ritual out of your own free will. You have absorbed Raglok yes?",
+&"type": "dialogue"
+},
+"61": {
+&"character": "Merolas",
+&"id": "61",
+&"next_id": "62",
+&"text": "Sava isn't an evil person by any means, but they mayhaps be a coward, if I may ask.",
+&"type": "dialogue"
+},
+"62": {
+&"character": "Merolas",
+&"id": "62",
+&"next_id": "63",
+&"text": "Die, please.",
+&"type": "dialogue"
+},
+"63": {
+&"id": "63",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"64": {
+&"id": "64",
+&"next_id": "65",
+&"type": ""
+},
+"65": {
+&"id": "65",
+&"next_id": "66",
+&"type": "title"
+},
+"66": {
+&"character": "Merolas",
+&"id": "66",
+&"next_id": "67",
+&"text": "Hey, YYYY, before you eat me, will you... at least promise to Him that I will wring out his own heart as I become your right hand?",
+&"type": "dialogue"
+},
+"67": {
+&"id": "67",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"68": {
+&"id": "68",
+&"next_id": "69",
+&"type": ""
+},
+"69": {
+&"id": "69",
+&"next_id": "70",
+&"type": "title"
 },
 "7": {
 &"character": "Sava",
@@ -127,12 +453,119 @@ lines = {
 &"text": "There is no other choice. Sorry, not sorry.",
 &"type": "dialogue"
 },
+"70": {
+&"character": "Siji",
+&"id": "70",
+&"next_id": "71",
+&"text": "There are thousands of delicious food across the universe and they are for everyone.",
+&"type": "dialogue"
+},
+"71": {
+&"character": "Siji",
+&"id": "71",
+&"next_id": "72",
+&"text": "And yet, you are born here as if it was not by punishment, but the humility of us.",
+&"type": "dialogue"
+},
+"72": {
+&"character": "Siji",
+&"id": "72",
+&"next_id": "73",
+&"text": "I will join you, but I want to face you as an EQUAL!",
+&"type": "dialogue"
+},
+"73": {
+&"id": "73",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"74": {
+&"id": "74",
+&"next_id": "75",
+&"type": ""
+},
+"75": {
+&"id": "75",
+&"next_id": "76",
+&"type": "title"
+},
+"76": {
+&"character": "Siji",
+&"id": "76",
+&"next_id": "77",
+&"text": "Aye. Amen. Alo. And. Across the universe.",
+&"type": "dialogue"
+},
+"77": {
+&"id": "77",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"78": {
+&"id": "78",
+&"next_id": "79",
+&"type": ""
+},
+"79": {
+&"id": "79",
+&"next_id": "80",
+&"type": "title"
+},
 "8": {
 &"character": "Sava",
 &"id": "8",
 &"next_id": "9",
 &"text": "Of course, you are a bit shorthanded, so I will give you reaugments when requested.",
 &"type": "dialogue"
+},
+"80": {
+&"character": "Him",
+&"id": "80",
+&"next_id": "81",
+&"text": "I am him.",
+&"type": "dialogue"
+},
+"81": {
+&"id": "81",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"82": {
+&"id": "82",
+&"next_id": "83",
+&"type": ""
+},
+"83": {
+&"id": "83",
+&"next_id": "84",
+&"type": "title"
+},
+"84": {
+&"character": "Him",
+&"id": "84",
+&"next_id": "85",
+&"text": "You are him.",
+&"type": "dialogue"
+},
+"85": {
+&"id": "85",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"86": {
+&"id": "86",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
 },
 "9": {
 &"character": "Sava",
@@ -154,11 +587,78 @@ Sava: Of course, you are a bit shorthanded, so I will give you reaugments when r
 Sava: So... eat, will you?
 => END
 
+~ chapter_1
+Sava: How did it feel to eat one of your very own friends?
+Sava: Well you must've heard from raglok about how great you were. Oh? Nevermind. 
+Sava: What's better to do anyways? Do you want to die after your life was saved?
+=> END
+
+~ chapter_2
+Sava: Another one falls. A shame. They could have been as great as I was, and yet she is now a part of the New Reign.
+Sava: Enjoy the last meal.
+=> END
+
+~ chapter_3
+Sava: You have ascended. Congratulations. Whooooooooopeeeeee.
+Sava: ...
+Sava: And now it is time for you to face Him. Go on. Do your Purpose.
+Sava: ...
+Sava: What about me?
+Sava: I'm just the scientist that saved the world from the Old Reign.
+=> END
+
+~ tease
+Sava: Are any of these lackeys giving you trouble?
+=> END
+
 ~ escapeWin
 Successfully escaped from battle!
 => END
 
 ~ escapeLose
 Unfortunate! You can NOT escape from this battle.
+=> END
+
+~ raglokIntro
+Raglok: ...
+Raglok: It can't be.
+Raglok: You have the New Reign now? But I- no WE saw you die on the battlefield earlier.
+Raglok: ... unless it's Sava.
+Raglok: ... of course it would be.
+Raglok: I will stand my ground. Do not think that becoming a god would end HIM.
+Raglok: This will be out of mercy.
+=> END
+
+~ raglokEnd
+Raglok: So this is the part where the New Reign Comes in to absorb my soul.
+Raglok: I can only wish you the best.
+=> END
+
+~ merolasIntro
+Merolas: To be forced to partake in an evil ritual out of your own free will. You have absorbed Raglok yes?
+Merolas: Sava isn't an evil person by any means, but they mayhaps be a coward, if I may ask.
+Merolas: Die, please.
+=> END
+
+~ merolasEnd
+Merolas: Hey, YYYY, before you eat me, will you... at least promise to Him that I will wring out his own heart as I become your right hand?
+=> END
+
+~ sijiIntro
+Siji: There are thousands of delicious food across the universe and they are for everyone.
+Siji: And yet, you are born here as if it was not by punishment, but the humility of us.
+Siji: I will join you, but I want to face you as an EQUAL!
+=> END
+
+~ sijiEnd
+Siji: Aye. Amen. Alo. And. Across the universe.
+=> END
+
+~ himIntro
+Him: I am him.
+=> END
+
+~ himOutro
+Him: You are him.
 => END"
 metadata/dialogue_manager_version = "3.6.3"

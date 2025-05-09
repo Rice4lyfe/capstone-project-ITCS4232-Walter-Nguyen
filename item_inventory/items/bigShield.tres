@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cg7oi042t2kx2"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_6jqij"]
+[ext_resource type="Texture2D" uid="uid://dgl5hrif33b8n" path="res://Sprites/item/1.png" id="2_th7rc"]
+
+[resource]
+script = ExtResource("1_6jqij")
+name = "Big Shield"
+texture = ExtResource("2_th7rc")
+description = "Increases your def by 3 (perma)"
+effect_type = 3
+effect_strength = 3
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

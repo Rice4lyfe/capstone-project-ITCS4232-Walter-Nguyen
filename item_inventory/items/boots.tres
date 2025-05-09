@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cvpxidqggteia"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_c8g5u"]
+[ext_resource type="Texture2D" uid="uid://5ie5hq8ie8pt" path="res://Sprites/item/8.png" id="2_albjd"]
+
+[resource]
+script = ExtResource("1_c8g5u")
+name = "Boots"
+texture = ExtResource("2_albjd")
+description = "Increase Agility by 1"
+effect_type = 4
+effect_strength = 1
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

@@ -1,10 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://stf57ueqgw8x"]
+[gd_scene load_steps=29 format=3 uid="uid://stf57ueqgw8x"]
 
 [ext_resource type="Script" uid="uid://f8ir40gt7fnl" path="res://Scenes/battle_scene.gd" id="1_anwxn"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_anwxn"]
 [ext_resource type="AudioStream" uid="uid://c3ycmhya8yl2k" path="res://Sound_Eff/button_press.wav" id="3_anwxn"]
 [ext_resource type="Texture2D" uid="uid://bmq7i5lbv6heb" path="res://Sprites/enemy/world1/bandit.png" id="4_e5vbs"]
 [ext_resource type="AudioStream" uid="uid://ccwhy8h1h3lx8" path="res://Music/battle_music.mp3" id="5_3gnqe"]
+[ext_resource type="AudioStream" uid="uid://cfflxoqxkfsvq" path="res://Sound_Eff/physAttack.wav" id="5_gt16y"]
+[ext_resource type="AudioStream" uid="uid://c2lojvio5jmfe" path="res://Sound_Eff/magic.wav" id="6_w4764"]
+[ext_resource type="AudioStream" uid="uid://bh7ikbli2ogvl" path="res://Music/boss.ogg" id="7_20f6w"]
+[ext_resource type="AudioStream" uid="uid://ddjh2jtufb66c" path="res://Sound_Eff/incarnatewav.wav" id="7_ed262"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb0gu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -104,6 +108,74 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="Animation" id="Animation_3gnqe"]
+resource_name = "enemy_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.4, 0.533333, 0.766667, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gt16y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_20f6w"]
+resource_name = "enemy_defeated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333334, 0.0666667, 0.0667667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.934406), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w4764"]
+resource_name = "enemy_summoned"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 0.934406), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20f6w"]
+_data = {
+&"RESET": SubResource("Animation_gt16y"),
+&"enemy_damaged": SubResource("Animation_3gnqe"),
+&"enemy_defeated": SubResource("Animation_20f6w"),
+&"enemy_summoned": SubResource("Animation_w4764")
+}
 
 [node name="BattleScene" type="Control"]
 layout_mode = 3
@@ -271,23 +343,12 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Player Options" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -87.0
-grow_horizontal = 2
-grow_vertical = 0
-metadata/_edit_group_ = true
-
-[node name="HP" type="ProgressBar" parent="Player Options"]
+[node name="HP" type="ProgressBar" parent="."]
 layout_mode = 2
 offset_left = 678.0
-offset_top = -57.0
+offset_top = 576.0
 offset_right = 1271.0
-offset_bottom = -7.0
+offset_bottom = 626.0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_anwxn")
 theme_override_font_sizes/font_size = 50
@@ -296,7 +357,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_anwxn")
 value = 20.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="Player Options/HP"]
+[node name="Label" type="Label" parent="HP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -313,6 +374,17 @@ text = "HP: 5/20
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Player Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
 
 [node name="OptionContainer" type="HBoxContainer" parent="Player Options"]
 custom_minimum_size = Vector2(20, 20)
@@ -409,12 +481,17 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player Choice"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -148.0
-offset_right = 808.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.5
+offset_top = -90.5
+offset_right = 408.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 metadata/_edit_group_ = true
 
@@ -600,18 +677,25 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
 text = "Embody"
 
 [node name="Currently Selected" type="Label" parent="Player Choice"]
-offset_left = 885.0
-offset_top = 10.0
-offset_right = 1217.0
-offset_bottom = 38.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 13.0
+offset_right = 166.0
+offset_bottom = 41.0
+grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("2_anwxn")
 theme_override_font_sizes/font_size = 30
-text = "Currently Selected: "
+text = "Take your pick"
 horizontal_alignment = 1
 
 [node name="Move1" type="Label" parent="Player Choice" groups=["moves"]]
+visible = false
+layout_mode = 0
 offset_left = 864.0
 offset_top = 107.0
 offset_right = 1251.0
@@ -622,7 +706,8 @@ theme_override_fonts/font = ExtResource("2_anwxn")
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
-[node name="Move2" type="Label" parent="Player Choice" groups=["moves"]]
+[node name="Move" type="Label" parent="Player Choice" groups=["moves"]]
+layout_mode = 0
 offset_left = 864.0
 offset_top = 183.0
 offset_right = 1251.0
@@ -634,6 +719,8 @@ theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
 [node name="Move3" type="Label" parent="Player Choice" groups=["moves"]]
+visible = false
+layout_mode = 0
 offset_left = 864.0
 offset_top = 270.0
 offset_right = 1251.0
@@ -645,6 +732,7 @@ theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 
 [node name="back_attack" type="Button" parent="Player Choice"]
+layout_mode = 0
 offset_left = 65.0
 offset_top = 536.0
 offset_right = 271.0
@@ -689,6 +777,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
 text = "Engage!"
 
 [node name="firstIndicator" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -804,14 +893,180 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
 theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
 text = "no"
 
+[node name="ConfirmationProceed" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationProceed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 60
+text = "Would you like
+ to proceed further?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="proceed_button" type="Button" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ms847")
+text = "Next Enemy"
+
+[node name="retreat_button" type="Button" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "retreat"
+
+[node name="ItemMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Location" type="Label" parent="ItemMenu"]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 1280.0
+offset_bottom = 48.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "Items:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemMenu"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 40.0
+offset_right = 522.0
+offset_bottom = 120.0
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+alignment = 1
+
+[node name="Item1" type="Button" parent="ItemMenu/VBoxContainer"]
+layout_mode = 2
+text = "Item 1"
+
+[node name="Item2" type="Button" parent="ItemMenu/VBoxContainer"]
+layout_mode = 2
+text = "Item 2"
+
+[node name="Item3" type="Button" parent="ItemMenu/VBoxContainer"]
+layout_mode = 2
+text = "Item 3"
+
+[node name="back_item" type="Button" parent="ItemMenu"]
+offset_left = 29.0
+offset_top = 637.0
+offset_right = 235.0
+offset_bottom = 705.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "Back"
+
 [node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_anwxn")
+
+[node name="physical_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gt16y")
+
+[node name="enemy_physical_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gt16y")
+
+[node name="magic_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_w4764")
+
+[node name="boss_entrance" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ed262")
 
 [node name="battle_music_world_1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3gnqe")
 parameters/looping = true
 
+[node name="boss_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_20f6w")
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_20f6w")
+}
+
+[node name="Damage" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.647059, 0, 0, 0.501961)
+
 [connection signal="pressed" from="Player Options/OptionContainer/attack_button" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Player Options/OptionContainer/item_button" to="." method="_on_item_button_pressed"]
 [connection signal="pressed" from="Player Options/OptionContainer/escape_button" to="." method="_on_escape_button_pressed"]
 [connection signal="pressed" from="Player Choice/HBoxContainer/AttackContainer/Bite" to="." method="_on_bite_pressed"]
 [connection signal="pressed" from="Player Choice/HBoxContainer/AttackContainer/Devour" to="." method="_on_devour_pressed"]
@@ -823,5 +1078,9 @@ parameters/looping = true
 [connection signal="pressed" from="Player Choice/HBoxContainer/DefendContainer/Rage" to="." method="_on_rage_pressed"]
 [connection signal="pressed" from="Player Choice/HBoxContainer/DefendContainer/Embody" to="." method="_on_embody_pressed"]
 [connection signal="pressed" from="Player Choice/back_attack" to="." method="_on_back_attack_pressed"]
+[connection signal="pressed" from="Player Choice/engage_attack" to="." method="_on_engage_attack_pressed"]
 [connection signal="pressed" from="ConfirmationEscape/VBoxContainer/yes_retreat" to="." method="_on_yes_retreat_pressed"]
 [connection signal="pressed" from="ConfirmationEscape/VBoxContainer/no_retreat" to="." method="_on_no_retreat_pressed"]
+[connection signal="pressed" from="ConfirmationProceed/VBoxContainer/proceed_button" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="ConfirmationProceed/VBoxContainer/retreat_button" to="." method="_on_retreat_button_pressed"]
+[connection signal="pressed" from="ItemMenu/back_item" to="." method="_on_back_item_pressed"]

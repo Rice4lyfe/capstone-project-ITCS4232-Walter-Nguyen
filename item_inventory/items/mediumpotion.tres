@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://2r5ytwi10ce0"]
+
+[ext_resource type="Script" uid="uid://bn8iyg3w2hru0" path="res://item_inventory/inventory_item.gd" id="1_pd50b"]
+[ext_resource type="Texture2D" uid="uid://w2p24v8oe3xu" path="res://Sprites/item/44.png" id="2_71ox7"]
+
+[resource]
+script = ExtResource("1_pd50b")
+name = "Medium Potion"
+texture = ExtResource("2_71ox7")
+description = "heals you for a medium amount"
+effect_type = 1
+effect_strength = 7
+metadata/_custom_type_script = "uid://bn8iyg3w2hru0"

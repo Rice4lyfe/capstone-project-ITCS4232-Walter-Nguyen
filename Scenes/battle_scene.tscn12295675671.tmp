@@ -1,0 +1,993 @@
+[gd_scene load_steps=25 format=3 uid="uid://stf57ueqgw8x"]
+
+[ext_resource type="Script" uid="uid://f8ir40gt7fnl" path="res://Scenes/battle_scene.gd" id="1_anwxn"]
+[ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_anwxn"]
+[ext_resource type="AudioStream" uid="uid://c3ycmhya8yl2k" path="res://Sound_Eff/button_press.wav" id="3_anwxn"]
+[ext_resource type="Texture2D" uid="uid://bmq7i5lbv6heb" path="res://Sprites/enemy/world1/bandit.png" id="4_e5vbs"]
+[ext_resource type="AudioStream" uid="uid://ccwhy8h1h3lx8" path="res://Music/battle_music.mp3" id="5_3gnqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb0gu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdvqd"]
+bg_color = Color(0.306675, 0.0156652, 0.0154486, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anwxn"]
+bg_color = Color(0.14902, 1, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.189526, 0.201349, 0.196306, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gnqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt16y"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20f6w"]
+bg_color = Color(0, 0, 0, 0.698039)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4764"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84vmf"]
+bg_color = Color(0, 0, 0, 0.698039)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdvqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gnqe"]
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed262"]
+bg_color = Color(0, 0, 0, 0.698039)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4ggb"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5vbs"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.885262, 0.776477, 0.706238, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms847"]
+bg_color = Color(0.0962048, 0.0962047, 0.0962048, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="Animation" id="Animation_3gnqe"]
+resource_name = "enemy_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.4, 0.533333, 0.766667, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gt16y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_20f6w"]
+resource_name = "enemy_defeated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333334, 0.0666667, 0.0667667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.934406), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w4764"]
+resource_name = "enemy_summoned"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 0.934406), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20f6w"]
+_data = {
+&"RESET": SubResource("Animation_gt16y"),
+&"enemy_damaged": SubResource("Animation_3gnqe"),
+&"enemy_defeated": SubResource("Animation_20f6w"),
+&"enemy_summoned": SubResource("Animation_w4764")
+}
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_anwxn")
+enemy_bandit = null
+enemy_guard = null
+enemy_boss1 = null
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Enemy" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wb0gu")
+
+[node name="HP" type="ProgressBar" parent="Enemy"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.5
+offset_top = 47.0
+offset_right = 296.5
+offset_bottom = 97.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxFlat_hdvqd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_anwxn")
+max_value = 999999.0
+value = 20.0
+show_percentage = false
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Enemy/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "HP: 5/20
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="Enemy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -183.0
+offset_right = 122.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_e5vbs")
+
+[node name="Name" type="Label" parent="Enemy"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 92.0
+offset_right = 105.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Location" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 371.0
+offset_bottom = 35.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Location:"
+
+[node name="Battles Won" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 9.0
+offset_right = 1437.0
+offset_bottom = 37.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Battles Won:"
+
+[node name="battleBar" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 1084.0
+offset_top = 48.0
+offset_right = 1254.0
+offset_bottom = 98.0
+color = Color(0, 0, 0, 1)
+
+[node name="BattleProgress" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = 48.0
+offset_right = -26.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_constants/separation = 5
+
+[node name="battle_1" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_2" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_3" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_4" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="battle_5" type="ColorRect" parent="BattleProgress"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Player Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="HP" type="ProgressBar" parent="Player Options"]
+layout_mode = 2
+offset_left = 678.0
+offset_top = -57.0
+offset_right = 1271.0
+offset_bottom = -7.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/background = SubResource("StyleBoxFlat_hdvqd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_anwxn")
+value = 20.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Player Options/HP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "HP: 5/20
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionContainer" type="HBoxContainer" parent="Player Options"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -613.0
+offset_top = -32.5
+offset_right = 613.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="attack_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Attack"
+
+[node name="item_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Item"
+
+[node name="ability_button" type="Button" parent="Player Options/OptionContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "ability"
+
+[node name="escape_button" type="Button" parent="Player Options/OptionContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "escape"
+
+[node name="Player Choice" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -323.48
+offset_top = 105.0
+offset_right = -2.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player Choice"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.5
+offset_top = -90.5
+offset_right = 408.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="AttackContainer" type="VBoxContainer" parent="Player Choice/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Attack" type="Label" parent="Player Choice/HBoxContainer/AttackContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Attack:"
+horizontal_alignment = 1
+
+[node name="Bite" type="Button" parent="Player Choice/HBoxContainer/AttackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.778387, 0, 0.216211, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_84vmf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Bite"
+
+[node name="Devour" type="Button" parent="Player Choice/HBoxContainer/AttackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.778387, 0, 0.216211, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Devour
+"
+
+[node name="Chomp" type="Button" parent="Player Choice/HBoxContainer/AttackContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.778387, 0, 0.216211, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Chomp"
+
+[node name="MagicContainer" type="VBoxContainer" parent="Player Choice/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Magic" type="Label" parent="Player Choice/HBoxContainer/MagicContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Magic:"
+horizontal_alignment = 1
+
+[node name="Fire" type="Button" parent="Player Choice/HBoxContainer/MagicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Fire"
+
+[node name="Aquelve" type="Button" parent="Player Choice/HBoxContainer/MagicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Aquelve"
+
+[node name="Swish" type="Button" parent="Player Choice/HBoxContainer/MagicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Swish"
+
+[node name="DefendContainer" type="VBoxContainer" parent="Player Choice/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Attack" type="Label" parent="Player Choice/HBoxContainer/DefendContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Defend"
+horizontal_alignment = 1
+
+[node name="Resist" type="Button" parent="Player Choice/HBoxContainer/DefendContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.12549, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Resist"
+
+[node name="Rage" type="Button" parent="Player Choice/HBoxContainer/DefendContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.12549, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Rage"
+
+[node name="Embody" type="Button" parent="Player Choice/HBoxContainer/DefendContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.807843, 0.890196, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.12549, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gnqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gt16y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_20f6w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w4764")
+text = "Embody"
+
+[node name="Currently Selected" type="Label" parent="Player Choice"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 13.0
+offset_right = 166.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 30
+text = "Take your pick"
+horizontal_alignment = 1
+
+[node name="Move1" type="Label" parent="Player Choice" groups=["moves"]]
+visible = false
+layout_mode = 0
+offset_left = 864.0
+offset_top = 107.0
+offset_right = 1251.0
+offset_bottom = 152.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Move" type="Label" parent="Player Choice" groups=["moves"]]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 183.0
+offset_right = 1251.0
+offset_bottom = 228.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Move3" type="Label" parent="Player Choice" groups=["moves"]]
+visible = false
+layout_mode = 0
+offset_left = 864.0
+offset_top = 270.0
+offset_right = 1251.0
+offset_bottom = 315.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="back_attack" type="Button" parent="Player Choice"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 536.0
+offset_right = 271.0
+offset_bottom = 604.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "Back"
+
+[node name="engage_attack" type="Button" parent="Player Choice"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = 80.0
+offset_right = -53.0
+offset_bottom = 148.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "Engage!"
+
+[node name="firstIndicator" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -128.0
+offset_right = 382.0
+offset_bottom = -100.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 36
+text = "The First to Attack is:"
+
+[node name="Action" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.05
+anchor_right = 0.9
+anchor_bottom = 0.05
+offset_left = -5.0
+offset_top = 601.0
+offset_right = -5.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5vbs")
+
+[node name="text" type="Label" parent="Action"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 50
+text = "This is a test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationEscape" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationEscape"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes_retreat" type="Button" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ms847")
+text = "yes"
+
+[node name="no_retreat" type="Button" parent="ConfirmationEscape/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "no"
+
+[node name="ConfirmationProceed" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationProceed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.5
+offset_top = -91.5
+offset_right = 220.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="areyousure" type="Label" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 60
+text = "Would you like
+ to proceed further?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="proceed_button" type="Button" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ms847")
+text = "Next Enemy"
+
+[node name="retreat_button" type="Button" parent="ConfirmationProceed/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.788235, 0.34902, 0, 1)
+theme_override_colors/font_color = Color(0.988235, 0.713726, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_anwxn")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdvqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gnqe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ed262")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4ggb")
+text = "retreat"
+
+[node name="button_pressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_anwxn")
+
+[node name="battle_music_world_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3gnqe")
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_20f6w")
+}
+
+[connection signal="pressed" from="Player Options/OptionContainer/attack_button" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Player Options/OptionContainer/escape_button" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/AttackContainer/Bite" to="." method="_on_bite_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/AttackContainer/Devour" to="." method="_on_devour_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/AttackContainer/Chomp" to="." method="_on_chomp_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/MagicContainer/Fire" to="." method="_on_fire_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/MagicContainer/Aquelve" to="." method="_on_aquelve_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/MagicContainer/Swish" to="." method="_on_swish_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/DefendContainer/Resist" to="." method="_on_resist_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/DefendContainer/Rage" to="." method="_on_rage_pressed"]
+[connection signal="pressed" from="Player Choice/HBoxContainer/DefendContainer/Embody" to="." method="_on_embody_pressed"]
+[connection signal="pressed" from="Player Choice/back_attack" to="." method="_on_back_attack_pressed"]
+[connection signal="pressed" from="Player Choice/engage_attack" to="." method="_on_engage_attack_pressed"]
+[connection signal="pressed" from="ConfirmationEscape/VBoxContainer/yes_retreat" to="." method="_on_yes_retreat_pressed"]
+[connection signal="pressed" from="ConfirmationEscape/VBoxContainer/no_retreat" to="." method="_on_no_retreat_pressed"]
+[connection signal="pressed" from="ConfirmationProceed/VBoxContainer/proceed_button" to="." method="_on_proceed_button_pressed"]
+[connection signal="pressed" from="ConfirmationProceed/VBoxContainer/retreat_button" to="." method="_on_retreat_button_pressed"]

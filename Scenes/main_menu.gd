@@ -17,7 +17,6 @@ func _on_tutorial_pressed() -> void:
 	$button_pressed.play()
 	DialogueManager.show_dialogue_balloon(load("res://Dialogue/menu_story.dialogue"),"tutorial")
 
-
 func _on_quit_pressed() -> void:
 	$button_pressed.play()
 	get_tree().quit()
