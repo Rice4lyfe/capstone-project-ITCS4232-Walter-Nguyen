@@ -6,6 +6,8 @@
  Credits:
  Dodge the Creeps! A godot tutorial that kicked off my journey. https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html
  ChatGPT for assisting me with the code https://chatgpt.com/
+ turn based combat system for godot by Jon Topielski https://www.youtube.com/watch?v=ifXGvlAn0bY
+ godot menu by Coco Codehttps://www.youtube.com/watch?v=zHYkcJyE52g
  Spacebackground by Westbeam https://opengameart.org/content/space-background-1
  Upheaval font https://www.dafont.com/upheaval.font
  Strange Dreams font (for the title) https://www.dafont.com/strange-dreams.font
