@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://stf57ueqgw8x"]
+[gd_scene load_steps=31 format=3 uid="uid://stf57ueqgw8x"]
 
 [ext_resource type="Script" uid="uid://f8ir40gt7fnl" path="res://Scenes/battle_scene.gd" id="1_anwxn"]
 [ext_resource type="FontFile" uid="uid://brpjmavbokdx0" path="res://Font/upheavtt.ttf" id="2_anwxn"]
@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bmq7i5lbv6heb" path="res://Sprites/enemy/world1/bandit.png" id="4_e5vbs"]
 [ext_resource type="AudioStream" uid="uid://ccwhy8h1h3lx8" path="res://Music/battle_music.mp3" id="5_3gnqe"]
 [ext_resource type="AudioStream" uid="uid://cfflxoqxkfsvq" path="res://Sound_Eff/physAttack.wav" id="5_gt16y"]
+[ext_resource type="AudioStream" uid="uid://cd2wav0kiqy6v" path="res://Sound_Eff/enemy_physical.wav" id="6_f4ggb"]
 [ext_resource type="AudioStream" uid="uid://c2lojvio5jmfe" path="res://Sound_Eff/magic.wav" id="6_w4764"]
 [ext_resource type="AudioStream" uid="uid://bh7ikbli2ogvl" path="res://Music/boss.ogg" id="7_20f6w"]
 [ext_resource type="AudioStream" uid="uid://ddjh2jtufb66c" path="res://Sound_Eff/incarnatewav.wav" id="7_ed262"]
+[ext_resource type="AudioStream" uid="uid://bqy665la0dsit" path="res://Sound_Eff/enemy_magic.wav" id="7_wb0gu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb0gu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -109,21 +111,6 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 shadow_offset = Vector2(0, 3.41)
 
-[sub_resource type="Animation" id="Animation_3gnqe"]
-resource_name = "enemy_damaged"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy/Enemy:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.133333, 0.4, 0.533333, 0.766667, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_gt16y"]
 length = 0.001
 tracks/0/type = "value"
@@ -137,6 +124,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3gnqe"]
+resource_name = "enemy_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.4, 0.533333, 0.766667, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_20f6w"]
@@ -1010,6 +1012,7 @@ layout_mode = 2
 text = "Item 3"
 
 [node name="back_item" type="Button" parent="ItemMenu"]
+layout_mode = 0
 offset_left = 29.0
 offset_top = 637.0
 offset_right = 235.0
@@ -1034,7 +1037,10 @@ stream = ExtResource("3_anwxn")
 stream = ExtResource("5_gt16y")
 
 [node name="enemy_physical_attack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_gt16y")
+stream = ExtResource("6_f4ggb")
+
+[node name="enemy_magic_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wb0gu")
 
 [node name="magic_attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_w4764")

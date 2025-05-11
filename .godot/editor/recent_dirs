@@ -1,3 +1,4 @@
+res://enemy
 res://Sound_Eff
 res://attack_inventory/attacks/player_attack
 res://item_inventory/items
@@ -8,7 +9,6 @@ res://Sprites/enemy/world2
 res://Sprites/enemy/world1
 res://Scenes
 res://Sprites/bg
-res://enemy
 res://attack_inventory/attacks/enemy_attack
 res://Font
 res://attack_inventory/attacks

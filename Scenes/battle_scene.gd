@@ -372,6 +372,15 @@ func reset_turn() -> void:
 
 func _on_engage_attack_pressed() -> void:
 	initiate_player_combat(player_attack,current_enemy)
+	
+func loot() -> void:
+	var roll = randf()
+	if roll <= 0.2:
+		var droppped_item = all_items.pick_random()
+		PlayerStats.inventory.append(droppped_item)
+		display_action("YOU JUST GOT: %s" % droppped_item.name)
+	else:
+		display_action("Nothing dropped...")
 
 func initiate_player_combat(attack: Attack,attacker: Enemy):
 	$"Player Choice".hide()
@@ -406,17 +415,11 @@ func initiate_player_combat(attack: Attack,attacker: Enemy):
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn") 
 	if current_enemy_health == 0:
 		PlayerStats.skill_points += current_enemy.skill_point_loot
-		var roll = randf()
-		if roll <= 0.2:
-			var droppped_item = all_items.pick_random()
-			PlayerStats.inventory.append(droppped_item)
-			display_action("YOU JUST GOT: %s" % droppped_item.name)
-		else:
-			display_action("Nothing dropped...")
+		loot()
 		if current_enemy.is_boss == true:
 			match PlayerStats.story_progress:
 				1:
-					DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"raglokEnd")
+					await DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"raglokEnd")
 					PlayerStats.story_progress += 1
 					get_tree().change_scene_to_file("res://Scenes/introduction.tscn") 
 				2:
@@ -430,10 +433,12 @@ func initiate_enemy_combat(attack: Attack) -> void:
 	var damage = 0
 	match attack.type:
 		Attack.ActionType.ATTACK:
+			$enemy_physical_attack.play()
 			damage = calc_damage(attack.base_power,PlayerStats.def, current_enemy.atk)
 			current_player_health = max(0, current_player_health - damage)
 			set_health($HP, current_player_health, PlayerStats.max_hp)
 		Attack.ActionType.MAGIC:
+			$enemy_magic_attack.play()
 			damage = calc_spe_damage(attack.base_power,PlayerStats.sp_def, current_enemy.sp_atk)
 			current_player_health  = max(0, current_player_health - damage)
 			set_health($HP, current_player_health, PlayerStats.max_hp)
