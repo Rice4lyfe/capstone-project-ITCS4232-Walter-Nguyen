@@ -437,14 +437,16 @@ func initiate_enemy_combat(attack: Attack) -> void:
 			damage = calc_damage(attack.base_power,PlayerStats.def, current_enemy.atk)
 			current_player_health = max(0, current_player_health - damage)
 			set_health($HP, current_player_health, PlayerStats.max_hp)
+			display_action("%s deals %d damage" % [attack.name,damage])
 		Attack.ActionType.MAGIC:
 			$enemy_magic_attack.play()
 			damage = calc_spe_damage(attack.base_power,PlayerStats.sp_def, current_enemy.sp_atk)
 			current_player_health  = max(0, current_player_health - damage)
 			set_health($HP, current_player_health, PlayerStats.max_hp)
+			display_action("%s deals %d damage" % [attack.name,damage])
 		Attack.ActionType.DEFEND:
-			pass
-	display_action("%s deals %d damage" % [attack.name,damage])
+			apply_attack_effect(current_enemy, attack.effect_type, attack.effect_strength)
+			display_action("%s Buff" % [attack.name])
 	await get_tree().create_timer(5).timeout
 			
 func enemy_turn() -> void:
@@ -554,10 +556,11 @@ func _on_retreat_button_pressed() -> void:
 func apply_item_effect(target, effect_type: Item.EffectType, strength: int) -> void:
 	match effect_type:
 		Item.EffectType.HEAL:
-			target.current_hp = clamp(target.current_hp + strength, 0, target.max_hp)
+			current_player_health  = max(0, current_player_health + strength)
+			set_health($HP, current_player_health, PlayerStats.max_hp)
 		Item.EffectType.BUFF_ATTACK:
 			target.atk += strength
-			target.spe_atk += strength
+			target.sp_atk += strength
 		Item.EffectType.BUFF_DEF:
 			target.def += strength
 			target.sp_def += strength
@@ -572,6 +575,20 @@ func apply_attack_effect(target, effect_type: Attack.EffectType, strength: int) 
 		Attack.EffectType.TAKE_DAMAGE:
 			current_player_health  = max(0, current_player_health - strength)
 			set_health($HP, current_player_health, PlayerStats.max_hp)
+		Attack.EffectType.BUFF_ATTACK:
+			target.atk += strength
+			target.sp_atk += strength
+		Attack.EffectType.BUFF_DEF:
+			target.def += strength
+			target.sp_def += strength
+		Attack.EffectType.RAISE_AGILITY:
+			target.agility += strength #not used
+			
+func apply_enemy_attack_effect(target, effect_type: Attack.EffectType, strength: int) -> void:
+	match effect_type:
+		Attack.EffectType.HEAL:
+			current_enemy_health = max(0, current_enemy_health + strength)
+			set_health($Enemy/HP, current_enemy_health, current_enemy.max_hp)
 		Attack.EffectType.BUFF_ATTACK:
 			target.atk += strength
 			target.spe_atk += strength
