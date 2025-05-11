@@ -21,6 +21,19 @@ extends Control
 	$EquipMenu/TabContainer/VBoxContainer/Item3
 ]
 
+@onready var all_items: Array[Item] = [
+	preload("res://item_inventory/items/bigGauntlet.tres"),
+	preload("res://item_inventory/items/bigpotion.tres"),
+	preload("res://item_inventory/items/bigShield.tres"),
+	preload("res://item_inventory/items/boots.tres"),
+	preload("res://item_inventory/items/mediumGauntlet.tres"),
+	preload("res://item_inventory/items/mediumpotion.tres"),
+	preload("res://item_inventory/items/mediumShield.tres"),
+	preload("res://item_inventory/items/smallGauntlet.tres"),
+	preload("res://item_inventory/items/smallpotion.tres"),
+	preload("res://item_inventory/items/smallShield.tres")
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	preparations_menu.visible = false #the buttons at the start of the gmae

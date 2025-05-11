@@ -6,3 +6,4 @@ res://enemy/boss1.tres
 res://Scenes/introduction.tscn
 res://Scenes/game_over.tscn
 res://Scenes/main_menu.tscn
+res://Scenes/introduction.gd
