@@ -342,7 +342,7 @@ func _on_embody_pressed() -> void:
 		#print("Queue full!")
 		
 func generate_enemy_move(enemy: Enemy) -> Attack:
-	var attacks = enemy.attack_list.duplicate()
+	var attacks = enemy.attack_list
 	attacks.shuffle()
 	return attacks[randi_range(0,attacks.size() - 1)]
 
@@ -409,13 +409,12 @@ func initiate_player_combat(attack: Attack,attacker: Enemy):
 			apply_attack_effect(PlayerStats, attack.effect_type, attack.effect_strength)
 			display_action("%s Buff" % [attack.name])
 	reset_player_action()
-	dodge_check(current_enemy.agility)
+	#dodge_check(current_enemy.agility)
 	await textbox_closed
 	if current_player_health == 0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn") 
 	if current_enemy_health == 0:
 		PlayerStats.skill_points += current_enemy.skill_point_loot
-		loot()
 		if current_enemy.is_boss == true:
 			match PlayerStats.story_progress:
 				1:
@@ -425,6 +424,7 @@ func initiate_player_combat(attack: Attack,attacker: Enemy):
 				2:
 					pass
 		else:		
+			loot()
 			player_battle_end()
 	else:
 		enemy_turn()
@@ -526,15 +526,20 @@ func _on_proceed_button_pressed() -> void:
 		1:
 			match battle_won:
 				1:
+					current_enemy = enemy_bandit
 					spawn_enemy(enemy_bandit)
 				2:
+					current_enemy = enemy_bandit
 					spawn_enemy(enemy_bandit)
 				3:
 					DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"tease")
+					current_enemy = enemy_guard
 					spawn_enemy(enemy_guard)
 				4:
+					current_enemy = enemy_guard
 					spawn_enemy(enemy_guard)
 				5:
+					current_enemy = enemy_boss1
 					$battle_music_world_1.stop()
 					$boss_music.play()
 					DialogueManager.show_dialogue_balloon(load("res://Dialogue/story.dialogue"),"raglokIntro")

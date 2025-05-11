@@ -1,8 +1,8 @@
-res://Scenes/introduction.tscn
+res://Scenes/battle_scene.tscn
 res://Scenes/battle_scene.gd
 res://enemy/bandit.tres
 res://enemy/guard.tres
 res://enemy/boss1.tres
-res://Scenes/battle_scene.tscn
+res://Scenes/introduction.tscn
 res://Scenes/game_over.tscn
 res://Scenes/main_menu.tscn
